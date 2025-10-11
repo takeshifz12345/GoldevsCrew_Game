@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7901770567321961801}
   - component: {fileID: 1131496677674980071}
   - component: {fileID: 7604736687396619596}
+  - component: {fileID: 3649289551191902072}
   m_Layer: 0
   m_Name: AtaqueEnemigo
   m_TagString: Untagged
@@ -162,3 +163,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3649289551191902072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3161860528703980097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22eeabd44b97a1e4b97daa1838c84c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  lifeTime: 0
+  damage: 0
