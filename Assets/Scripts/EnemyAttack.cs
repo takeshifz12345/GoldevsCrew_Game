@@ -6,6 +6,22 @@ public class EnemyAttack : MonoBehaviour
     public float lifeTime;
     public int damage;
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);
+            }
+
+            Destroy(gameObject); // destruir el proyectil o golpe enemigo al impactar
+        }
+    }
+
     void Start()
     {
         
@@ -13,6 +29,12 @@ public class EnemyAttack : MonoBehaviour
 
     void Update()
     {
-        
+        // Reducir vida útil con el tiempo
+        lifeTime -= Time.deltaTime;
+
+        if (lifeTime <= 0f)
+        {
+            Destroy(gameObject);
+        }
     }
 }
