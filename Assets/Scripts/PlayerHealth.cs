@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public float healCooldown;
     public float healCooldownTimer;
     public int signaLevel;
+    public UIHealth uIHealth;
 
     public void TakeDamage(int damage)
     {
@@ -50,16 +52,19 @@ public class PlayerHealth : MonoBehaviour
 
     public void OnHealthChanged()
     {
-        //Pa´ luego.
+        uIHealth.UpdateHealthUI(currentHealth,maxHealth);
     }
 
     void Start()
     {
         currentHealth = maxHealth;
+        uIHealth.UpdateHealthUI(currentHealth, maxHealth);
     }
 
     void Update()
     {
         UpdateCooldown();
+        uIHealth.UpdateHealthUI(currentHealth, maxHealth);
+
     }
 }
