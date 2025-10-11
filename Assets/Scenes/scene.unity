@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 361258536}
   - component: {fileID: 361258535}
   - component: {fileID: 361258534}
+  - component: {fileID: 361258537}
   m_Layer: 0
   m_Name: Piso
   m_TagString: Floor
@@ -421,6 +422,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &361258537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361258533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4714ebde00bbf354993bc848db83f118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  canHeal: 0
+  healCooldown: 0
+  healCooldownTimer: 0
+  signaLevel: 0
+  uIHealth: {fileID: 0}
 --- !u!1 &420720631
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,6 +722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1048126845}
+  - component: {fileID: 1048126846}
   m_Layer: 5
   m_Name: UIVida
   m_TagString: Untagged
@@ -729,6 +750,19 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: 5}
   m_SizeDelta: {x: 769, y: 50}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1048126846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048126844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d169465e5054cd84ebb0598cc7e044e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpText: {fileID: 2055318506}
 --- !u!1 &1099230023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1357,8 @@ GameObject:
   - component: {fileID: 1972895994}
   - component: {fileID: 1972895993}
   - component: {fileID: 1972895998}
+  - component: {fileID: 1972896000}
+  - component: {fileID: 1972895999}
   m_Layer: 0
   m_Name: PersonajeJugable
   m_TagString: Floor
@@ -1520,6 +1556,41 @@ MonoBehaviour:
   isGrounded: 0
   direction: 0
   rb: {fileID: 1972895996}
+--- !u!114 &1972895999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972895992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99e8439724af0284db10ab27b5c9a441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  shootPoint: {fileID: 0}
+  bulletSpeed: 0
+  playerController: {fileID: 0}
+--- !u!114 &1972896000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972895992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4714ebde00bbf354993bc848db83f118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 0
+  canHeal: 1
+  healCooldown: 5
+  healCooldownTimer: 0
+  signaLevel: 0
+  uIHealth: {fileID: 1048126846}
 --- !u!1 &2043992054
 GameObject:
   m_ObjectHideFlags: 0
