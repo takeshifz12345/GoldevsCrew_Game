@@ -6,6 +6,15 @@ public class SignalZone : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+
+            if (playerHealth != null)
+            {
+                playerHealth.signaLevel = signalValue;
+                Debug.Log($"Se asignó signaLevel = {signalValue} al jugador.");
+            }
+        }
     }
 }
