@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "name": "InputSystem_Actions",
+    "name": "InputActionPlayer",
     "maps": [
         {
             "name": "Player",
@@ -110,7 +110,7 @@
                 }
             ]
         },
-	{
+        {
             "name": "UI",
             "id": "272f6d14-89ba-496f-b7ff-215263d3219f",
             "actions": [
