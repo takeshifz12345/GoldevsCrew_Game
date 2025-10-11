@@ -7,6 +7,6 @@ public class UICooldown : MonoBehaviour
 
     public void UpdateCooldownUI(float cooldown)
     {
-
+        cooldownText.text = cooldown.ToString();
     }
 }

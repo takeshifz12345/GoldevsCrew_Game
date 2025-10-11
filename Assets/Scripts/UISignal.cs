@@ -7,6 +7,6 @@ public class UISignal : MonoBehaviour
 
     public void UpdateSignalUI(int signal)
     {
-
+        signalText.text = "señal: " + signal;
     }
 }

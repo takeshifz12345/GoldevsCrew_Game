@@ -7,6 +7,6 @@ public class UIHealth : MonoBehaviour
 
     public void UpdateHealthUI(int current, int max)
     {
-
+        hpText.text = current + "/" + max + " hp";
     }
 }
