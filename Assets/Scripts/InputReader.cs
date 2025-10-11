@@ -9,11 +9,11 @@ public class InpurReader : MonoBehaviour
     public PlayerShoot playerShoot;
     public PlayerHealth playerHealth;
     public bool inputsEnabled;
-    private InputAction moveLeftAction;
-    private InputAction moveRightAction;
-    private InputAction jumpAction;
-    private InputAction shootAction;
-    private InputAction callAction;
+    public InputAction moveLeftAction;
+    public InputAction moveRightAction;
+    public InputAction jumpAction;
+    public InputAction shootAction;
+    public InputAction callAction;
 
     public void Initialize(PlayerController pc, PlayerShoot ps, PlayerHealth ph, InputActionAsset inputAsset, string mapName)
     {

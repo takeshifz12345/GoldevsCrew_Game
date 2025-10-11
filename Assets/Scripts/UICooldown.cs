@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class UICooldown : MonoBehaviour
 {
-    public TextMesh cooldownText;
+    public TextMeshProUGUI cooldownText;
 
-    void UpdateCooldownUI(float cooldown)
+    public void UpdateCooldownUI(float cooldown)
     {
 
     }

@@ -7,7 +7,7 @@ public class HazardSpawner : MonoBehaviour
     public float spawnAreaA;
     public float spawnAreaB;
 
-    void SpawnHazard()
+    public void SpawnHazard()
     {
 
     }

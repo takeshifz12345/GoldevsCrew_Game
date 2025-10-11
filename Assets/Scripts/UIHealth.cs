@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class UIHealth : MonoBehaviour
 {
-    public TextMesh hpText;
+    public TextMeshProUGUI hpText;
 
-    void UpdateHealthUI(int current, int max)
+    public void UpdateHealthUI(int current, int max)
     {
 
     }

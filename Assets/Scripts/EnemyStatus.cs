@@ -5,7 +5,7 @@ public class EnemyStatus : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
-    void TakeDamage()
+    public void TakeDamage()
     {
 
     }

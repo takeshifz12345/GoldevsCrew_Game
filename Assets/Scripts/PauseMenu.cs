@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    void Pause()
+    public void Pause()
     {
 
     }
 
-    void Resume()
+    public void Resume()
     {
 
     }

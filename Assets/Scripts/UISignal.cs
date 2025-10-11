@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class UISignal : MonoBehaviour
 {
-    public TextMesh signalText;
+    public TextMeshProUGUI signalText;
 
-    void UpdateSignalUI(int signal)
+    public void UpdateSignalUI(int signal)
     {
 
     }

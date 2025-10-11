@@ -9,27 +9,27 @@ public class PlayerHealth : MonoBehaviour
     public float healCooldownTimer;
     public int signaLevel;
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
 
     }
 
-    void Heal()
+    public void Heal()
     {
 
     }
 
-    void StartHealCooldown()
+    public void StartHealCooldown()
     {
 
     }
 
-    void UpdateCooldown()
+    public void UpdateCooldown()
     {
 
     }
 
-    void OnHealthChanged()
+    public void OnHealthChanged()
     {
 
     }

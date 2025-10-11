@@ -6,19 +6,19 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public bool isGrounded;
     public int direction;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
-    void Move(float direction)
+    public void Move(float direction)
     {
 
     }
 
-    void Jump()
+    public void Jump()
     {
 
     }
 
-    private void Start()
+    void Start()
     {
         
     }

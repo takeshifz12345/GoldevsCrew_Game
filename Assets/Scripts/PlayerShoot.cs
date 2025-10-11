@@ -7,7 +7,7 @@ public class PlayerShoot : MonoBehaviour
     public float bulletSpeed;
     public PlayerController playerController;
 
-    void shoot()
+    public void shoot()
     {
 
     }
