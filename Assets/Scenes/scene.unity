@@ -1325,7 +1325,7 @@ GameObject:
   - component: {fileID: 1972895998}
   m_Layer: 0
   m_Name: PersonajeJugable
-  m_TagString: Player
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1515,8 +1515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38225b64f2a3f8844b46754408cdcc88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  jumpForce: 0
+  moveSpeed: 1
+  jumpForce: 5
   isGrounded: 0
   direction: 0
   rb: {fileID: 1972895996}
