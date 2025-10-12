@@ -12,8 +12,7 @@ public class SignalZone : MonoBehaviour
 
             if (playerHealth != null)
             {
-                playerHealth.signaLevel = signalValue;
-                Debug.Log($"Se asignó signaLevel = {signalValue} al jugador.");
+                playerHealth.UpdateSignal(signalValue);
             }
         }
     }

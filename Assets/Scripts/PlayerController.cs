@@ -19,11 +19,11 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        Debug.Log("entra a Jump");
-       rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        isGrounded = false;
-
-
+        if (isGrounded)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            isGrounded = false;
+        }
     }
 
     void Start()
@@ -47,16 +47,16 @@ public class PlayerController : MonoBehaviour
          //   Jump();
        // }
                // Leer el eje horizontal (-1 = izquierda, 1 = derecha)
-        float moveInput = Input.GetAxisRaw("Horizontal");
+        //float moveInput = Input.GetAxisRaw("Horizontal");
 
-        // Mover personaje
-        Move(moveInput);
+        //// Mover personaje
+        //Move(moveInput);
 
-        // Salto con la tecla W
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
-        {
-            Jump();
-        }
+        //// Salto con la tecla W
+        //if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        //{
+        //    Jump();
+        //}
 
 
 

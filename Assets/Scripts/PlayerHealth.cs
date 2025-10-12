@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
     public float healCooldownTimer;
     public int signaLevel;
     public UIHealth uIHealth;
+    public UICooldown uICooldown;
+    public UISignal uISignal;
 
     public void TakeDamage(int damage)
     {
@@ -47,6 +49,8 @@ public class PlayerHealth : MonoBehaviour
                 canHeal = true;
                 healCooldownTimer = 0f;
             }
+
+            uICooldown.UpdateCooldownUI(healCooldownTimer);
         }
     }
 
@@ -55,16 +59,22 @@ public class PlayerHealth : MonoBehaviour
         uIHealth.UpdateHealthUI(currentHealth,maxHealth);
     }
 
+    public void UpdateSignal(int newSignal)
+    {
+        signaLevel = newSignal;
+        uISignal.UpdateSignalUI(signaLevel);
+    }
+
     void Start()
     {
         currentHealth = maxHealth;
         uIHealth.UpdateHealthUI(currentHealth, maxHealth);
+        uICooldown.UpdateCooldownUI(healCooldownTimer);
     }
 
     void Update()
     {
         UpdateCooldown();
         uIHealth.UpdateHealthUI(currentHealth, maxHealth);
-
     }
 }
