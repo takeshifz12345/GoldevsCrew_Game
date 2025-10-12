@@ -50,7 +50,8 @@ public class PlayerHealth : MonoBehaviour
                 healCooldownTimer = 0f;
             }
 
-            uICooldown.UpdateCooldownUI(healCooldownTimer);
+            int intCooldown = (int)healCooldownTimer;
+            uICooldown.UpdateCooldownUI(intCooldown);
         }
     }
 

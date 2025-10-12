@@ -1505,6 +1505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 10
+  hpText: {fileID: 235381819}
 --- !u!212 &967002011
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2134,8 +2135,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2121406998389728491, guid: c5e8e2f72a885284db142586d74a4167, type: 3}
   shootPoint: {fileID: 1285514084}
-  bulletSpeed: 1
+  bulletSpeed: 5
   playerController: {fileID: 1285514085}
+  playerHealth: {fileID: 1285514082}
 --- !u!4 &1285514084
 Transform:
   m_ObjectHideFlags: 0

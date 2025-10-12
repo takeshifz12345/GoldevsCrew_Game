@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
 
         // Mover el personaje en el eje X (sin rotación ni cambio de escala)
         rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
-
     }
 
     public void Jump()
