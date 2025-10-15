@@ -21,7 +21,6 @@ public class EnemyStatus : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log(gameObject.name + " ha sido destruido.");
         Destroy(gameObject);
     }
 

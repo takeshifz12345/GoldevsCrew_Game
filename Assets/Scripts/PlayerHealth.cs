@@ -57,7 +57,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void OnHealthChanged()
     {
-        uIHealth.UpdateHealthUI(currentHealth,maxHealth);
+        uIHealth.UpdateHealthUI(currentHealth);
     }
 
     public void UpdateSignal(int newSignal)
@@ -69,13 +69,13 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        uIHealth.UpdateHealthUI(currentHealth, maxHealth);
+        uIHealth.UpdateHealthUI(currentHealth);
         uICooldown.UpdateCooldownUI(healCooldownTimer);
     }
 
     void Update()
     {
         UpdateCooldown();
-        uIHealth.UpdateHealthUI(currentHealth, maxHealth);
+        uIHealth.UpdateHealthUI(currentHealth);
     }
 }

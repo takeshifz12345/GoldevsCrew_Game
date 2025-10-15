@@ -12,7 +12,6 @@ public class PlayerShoot : MonoBehaviour
     {
         if (bulletPrefab == null || shootPoint == null || playerController == null)
         {
-            Debug.LogWarning("Faltan referencias en PlayerShooting");
             return;
         }
 

@@ -1,12 +1,21 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UICooldown : MonoBehaviour
 {
-    public TextMeshProUGUI cooldownText;
+    public Image cooldownImage;
+    public Sprite cooldownImageOn;
+    public Sprite cooldownImageOff;
 
     public void UpdateCooldownUI(float cooldown)
     {
-        cooldownText.text = cooldown.ToString();
+        if (cooldown < 1)
+        {
+            cooldownImage.sprite = cooldownImageOn;
+        }
+        else
+        {
+            cooldownImage.sprite = cooldownImageOff;
+        }
     }
 }

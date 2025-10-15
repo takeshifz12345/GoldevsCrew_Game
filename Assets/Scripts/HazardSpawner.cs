@@ -17,8 +17,6 @@ public class HazardSpawner : MonoBehaviour
 
         // Instanciar el prefab en esa posición
         Instantiate(hazardPrefab, spawnPos, Quaternion.identity);
-
-        Debug.Log($"Hazard generado en X: {randomX}");
     }
 
     void Start()

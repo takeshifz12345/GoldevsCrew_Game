@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     {
         this.direction = (int)direction;
 
-        // Mover el personaje en el eje X (sin rotación ni cambio de escala)
+        // Movimiento horizontal
         rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
     }
 
@@ -61,7 +61,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
-     private void OnCollisionEnter2D(Collision2D collision)
+    private void FixedUpdate()
+    {
+        rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         // Detecta si el objeto tocado tiene la etiqueta "floor"
         if (collision.gameObject.CompareTag("Floor"))

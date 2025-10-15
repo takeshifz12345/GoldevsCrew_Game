@@ -68,16 +68,20 @@ public class InputReader : MonoBehaviour
     {
         if (!inputsEnabled || playerController == null) return;
 
-        bool moving = ctx.ReadValueAsButton();
-        playerController.Move(-1);
+        if (ctx.performed) // Cuando se presiona
+            playerController.Move(-1);
+        else if (ctx.canceled) // Cuando se suelta
+            playerController.Move(0);
     }
 
     void OnMoveRight(InputAction.CallbackContext ctx)
     {
         if (!inputsEnabled || playerController == null) return;
 
-        bool moving = ctx.ReadValueAsButton();
-        playerController.Move(1);
+        if (ctx.performed)
+            playerController.Move(1);
+        else if (ctx.canceled)
+            playerController.Move(0);
     }
 
     void OnJump(InputAction.CallbackContext ctx)
