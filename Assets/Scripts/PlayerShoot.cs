@@ -3,37 +3,31 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public Transform shootPoint;
     public float bulletSpeed;
     public PlayerController playerController;
     public PlayerHealth playerHealth;
 
     public void Shoot()
     {
-        if (bulletPrefab == null || shootPoint == null || playerController == null)
+        if (bulletPrefab == null || playerController == null)
         {
             return;
         }
 
-        // Instanciar la bala
-        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
-
         // Obtener la direcci�n desde el PlayerController (-1 = izquierda, 1 = derecha)
-        int direction = playerController.direction;
+        int direction = playerController.ultDirection;
+
+
+        Vector2 shootPoint = new Vector2(transform.position.x + (1 * direction), transform.position.y);
+
+        // Instanciar la bala
+        GameObject bullet = Instantiate(bulletPrefab, shootPoint, Quaternion.identity);
 
         // Aplicar velocidad a la bala seg�n la direcci�n
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
             rb.linearVelocity = new Vector2(direction * bulletSpeed, 0f);
-        }
-
-        // (Opcional) girar la bala si va hacia la izquierda
-        if (direction < 0)
-        {
-            //Vector3 scale = bullet.transform.localScale;
-            //scale.x *= -1;
-            //bullet.transform.localScale = scale;
         }
 
         playerHealth.TakeDamage(1);

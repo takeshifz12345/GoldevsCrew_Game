@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.LightAnchor;
 
 public class PlayerController : MonoBehaviour
 {
@@ -6,7 +7,10 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public bool isGrounded;
     public int direction;
-    public Rigidbody2D rb;
+    public int ultDirection;
+    private Rigidbody2D rb;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     public void Move(float direction)
     {
@@ -14,6 +18,20 @@ public class PlayerController : MonoBehaviour
 
         // Movimiento horizontal
         rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
+
+        bool isWalking = direction != 0;
+        animator.SetBool("isWalk", isWalking);
+
+        if (direction == -1)
+        {
+            spriteRenderer.flipX = true;
+            ultDirection = -1;
+        }
+        else if (direction == 1)
+        {
+            spriteRenderer.flipX = false;
+            ultDirection = 1;
+        }
     }
 
     public void Jump()
@@ -27,9 +45,10 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-       // Obtiene el Rigidbody2D del personaje
+        // Obtiene el Rigidbody2D del personaje
         rb = GetComponent<Rigidbody2D>();
-
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
