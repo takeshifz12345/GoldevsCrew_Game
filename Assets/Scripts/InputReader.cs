@@ -9,8 +9,7 @@ public class InputReader : MonoBehaviour
     public PlayerShoot playerShoot;
     public PlayerHealth playerHealth;
     public bool inputsEnabled;
-    public InputAction moveLeftAction;
-    public InputAction moveRightAction;
+    private InputAction moveAction;
     public InputAction jumpAction;
     public InputAction shootAction;
     public InputAction callAction;
@@ -31,18 +30,14 @@ public class InputReader : MonoBehaviour
         var actionMap = inputActionPlayer.FindActionMap(actionMapName, true);
 
         // Buscar cada acción
-        moveLeftAction = actionMap.FindAction("MoveLeft", true);
-        moveRightAction = actionMap.FindAction("MoveRight", true);
+        moveAction = actionMap.FindAction("Move", true);
         jumpAction = actionMap.FindAction("Jump", true);
         shootAction = actionMap.FindAction("Shoot", true);
         callAction = actionMap.FindAction("Call", true);
 
         // Asignar callbacks
-        moveLeftAction.performed += OnMoveLeft;
-        moveLeftAction.canceled += OnMoveLeft;
-
-        moveRightAction.performed += OnMoveRight;
-        moveRightAction.canceled += OnMoveRight;
+        moveAction.performed += OnMove;
+        moveAction.canceled += OnMove;
 
         jumpAction.performed += OnJump;
         shootAction.performed += OnShoot;
@@ -64,24 +59,11 @@ public class InputReader : MonoBehaviour
         inputsEnabled = false;
     }
 
-    void OnMoveLeft(InputAction.CallbackContext ctx)
+    void OnMove(InputAction.CallbackContext ctx)
     {
         if (!inputsEnabled || playerController == null) return;
-
-        if (ctx.performed) // Cuando se presiona
-            playerController.Move(-1);
-        else if (ctx.canceled) // Cuando se suelta
-            playerController.Move(0);
-    }
-
-    void OnMoveRight(InputAction.CallbackContext ctx)
-    {
-        if (!inputsEnabled || playerController == null) return;
-
-        if (ctx.performed)
-            playerController.Move(1);
-        else if (ctx.canceled)
-            playerController.Move(0);
+        float moveValue = ctx.ReadValue<float>(); // -1 izquierda, 0 quieto, 1 derecha
+        playerController.Move(moveValue);
     }
 
     void OnJump(InputAction.CallbackContext ctx)
