@@ -1,5 +1,7 @@
+using System;
 using JetBrains.Annotations;
 using UnityEngine;
+
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -12,12 +14,20 @@ public class PlayerHealth : MonoBehaviour
     public UIHealth uIHealth;
     public UICooldown uICooldown;
     public UISignal uISignal;
+    
+    public GameObject GameOver; // Arrastrar el Canvas desde el Inspector
+    
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         OnHealthChanged();
+
+       if (currentHealth <= 0)
+    {
+        Die(); // <-- Aquí llamas a Die cuando el jugador muere
+    }
     }
 
     public void Heal()
@@ -78,4 +88,13 @@ public class PlayerHealth : MonoBehaviour
         UpdateCooldown();
         uIHealth.UpdateHealthUI(currentHealth);
     }
+    private void Die()
+    {
+         if (GameOver != null)
+            GameOver.SetActive(true); // Mostrar canvas de Game Over
+
+        Time.timeScale = 0f; // Pausa el juego si quieres
+    }
+  
+
 }

@@ -9,6 +9,13 @@ public class EyeManager : MonoBehaviour
         animator.SetBool("isOpen", open);
     }
 
+    public void ChangeState()
+    {
+        // Cambia el valor actual de "isOpen" al contrario
+        bool currentState = animator.GetBool("isOpen");
+        animator.SetBool("isOpen", !currentState);
+    }
+
     void Update()
     {
 

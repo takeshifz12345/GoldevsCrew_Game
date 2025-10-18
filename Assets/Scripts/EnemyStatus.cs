@@ -7,16 +7,21 @@ public class EnemyStatus : MonoBehaviour
     public int currentHealth;
     public TextMeshProUGUI hpText;
 
+    public bool active = false;
+
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-
-        if (currentHealth <= 0)
+        if (active)
         {
-            Die();
-        }
+            currentHealth -= damage;
 
-        hpText.text = currentHealth.ToString();
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+
+            hpText.text = currentHealth.ToString();
+        }
     }
 
     private void Die()

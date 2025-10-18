@@ -25,11 +25,11 @@ public class Level1Stage3 : MonoBehaviour
         Vector2 posSpawn = new Vector2(transform.position.x + 15.5f, transform.position.y - 2.5f);
         GameObject ataqueGO = Instantiate(ataque, posSpawn, Quaternion.identity);
 
-        // Configurar parámetros del ataque
+        // Configurar parï¿½metros del ataque
         EnemyAttack enemyAttack = ataqueGO.GetComponent<EnemyAttack>();
         enemyAttack.direction = Vector2.left;  // Hacia la izquierda
         enemyAttack.speed = 5f;                // Velocidad
-        enemyAttack.damage = 10;               // Daño
+        enemyAttack.damage = 2;               // Daï¿½o
         enemyAttack.lifeTime = 3f;             // Tiempo de vida
     }
 
@@ -38,11 +38,11 @@ public class Level1Stage3 : MonoBehaviour
         Vector2 posSpawn = new Vector2(transform.position.x + 15.5f, transform.position.y - 0.5f);
         GameObject ataqueGO = Instantiate(ataque, posSpawn, Quaternion.identity);
 
-        // Configurar parámetros del ataque
+        // Configurar parï¿½metros del ataque
         EnemyAttack enemyAttack = ataqueGO.GetComponent<EnemyAttack>();
         enemyAttack.direction = Vector2.left;  // Hacia la izquierda
         enemyAttack.speed = 5f;                // Velocidad
-        enemyAttack.damage = 10;               // Daño
+        enemyAttack.damage = 2;               // Daï¿½o
         enemyAttack.lifeTime = 3f;             // Tiempo de vida
     }
 
@@ -51,11 +51,11 @@ public class Level1Stage3 : MonoBehaviour
         Vector2 posSpawn = new Vector2(transform.position.x + 15.5f, transform.position.y + 1.5f);
         GameObject ataqueGO = Instantiate(ataque, posSpawn, Quaternion.identity);
 
-        // Configurar parámetros del ataque
+        // Configurar parï¿½metros del ataque
         EnemyAttack enemyAttack = ataqueGO.GetComponent<EnemyAttack>();
         enemyAttack.direction = Vector2.left;  // Hacia la izquierda
         enemyAttack.speed = 5f;                // Velocidad
-        enemyAttack.damage = 10;               // Daño
+        enemyAttack.damage = 2;               // Daï¿½o
         enemyAttack.lifeTime = 3f;             // Tiempo de vida
     }
 }
