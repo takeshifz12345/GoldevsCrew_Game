@@ -22,7 +22,7 @@ public class FirstDamage : MonoBehaviour
 
                 //acà se debe colocar el còdigo que desactive los inputs del jugador y que luego de x tiempo vuelva a activarse
                
-                if (inputReader != null) StartCoroutine(ReactivarInput(inputReader, 2f));
+                if (inputReader != null) StartCoroutine(ReactivarInput(inputReader, 1.25f));
             }
         }
     }

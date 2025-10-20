@@ -24,6 +24,8 @@ public class BossBattle1 : MonoBehaviour
     public GameObject enemigo;
     public GameObject canvas;
 
+    public GameObject wall;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !flag)
@@ -34,6 +36,8 @@ public class BossBattle1 : MonoBehaviour
 
             enemigo.GetComponent<EnemyStatus>().active = true;
             enemigo.GetComponent<EnemyStatus>().TakeDamage(0);
+
+            wall.SetActive(true);
         }
     }
 
@@ -117,6 +121,8 @@ public class BossBattle1 : MonoBehaviour
             zona1.Enable();
             zona2.Enable();
             zona3.Enable();
+
+            wall.SetActive(false);
 
             Destroy(this);
         }

@@ -51,35 +51,6 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
-    {
-         // Leer el eje horizontal (-1 = izquierda, 1 = derecha)
-        //float moveInput = Input.GetAxisRaw("Horizontal");
-
-        // Llamar al método de movimiento
-       // Move(moveInput);
-
-        // // Salto
-        // if (Input.GetButtonDown("Jump") && isGrounded)
-        //{
-         //   Jump();
-       // }
-               // Leer el eje horizontal (-1 = izquierda, 1 = derecha)
-        //float moveInput = Input.GetAxisRaw("Horizontal");
-
-        //// Mover personaje
-        //Move(moveInput);
-
-        //// Salto con la tecla W
-        //if (Input.GetKeyDown(KeyCode.W) && isGrounded)
-        //{
-        //    Jump();
-        //}
-
-
-
-    }
-
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
@@ -93,6 +64,4 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
         }
     }
-
-
 }
