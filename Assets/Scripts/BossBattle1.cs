@@ -33,6 +33,7 @@ public class BossBattle1 : MonoBehaviour
             canvas.SetActive(true);
 
             enemigo.GetComponent<EnemyStatus>().active = true;
+            enemigo.GetComponent<EnemyStatus>().TakeDamage(0);
         }
     }
 
@@ -45,7 +46,7 @@ public class BossBattle1 : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < 1; j++)
             {
                 float spawnX = Random.Range(spawnXADown, spawnXBDown);
                 Vector2 posSpawn = new Vector2(spawnX, spawnYDown);
@@ -55,8 +56,8 @@ public class BossBattle1 : MonoBehaviour
                 EnemyAttack enemyAttack = ataqueGO.GetComponent<EnemyAttack>();
                 enemyAttack.direction = Vector2.down;
                 enemyAttack.speed = 5f;
-                enemyAttack.damage = 2;
-                enemyAttack.lifeTime = 3f;
+                enemyAttack.damage = 1;
+                enemyAttack.lifeTime = 6f;
             }
             yield return new WaitForSeconds(intervaloAtaques);
         }
@@ -66,9 +67,9 @@ public class BossBattle1 : MonoBehaviour
 
     private IEnumerator LanzarAtaquesIzquierda()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
         {
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < 1; j++)
             {
                 float spawnY = Random.Range(spawnYALeft, spawnYBLeft);
                 Vector2 posSpawn = new Vector2(spawnXLeft, spawnY);
@@ -78,8 +79,8 @@ public class BossBattle1 : MonoBehaviour
                 EnemyAttack enemyAttack = ataqueGO.GetComponent<EnemyAttack>();
                 enemyAttack.direction = Vector2.left;
                 enemyAttack.speed = 5f;
-                enemyAttack.damage = 2;
-                enemyAttack.lifeTime = 3f;
+                enemyAttack.damage = 1;
+                enemyAttack.lifeTime = 30f;
             }
             yield return new WaitForSeconds(intervaloAtaques);
         }

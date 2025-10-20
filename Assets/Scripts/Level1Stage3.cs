@@ -29,7 +29,7 @@ public class Level1Stage3 : MonoBehaviour
         EnemyAttack enemyAttack = ataqueGO.GetComponent<EnemyAttack>();
         enemyAttack.direction = Vector2.left;  // Hacia la izquierda
         enemyAttack.speed = 5f;                // Velocidad
-        enemyAttack.damage = 2;               // Da�o
+        enemyAttack.damage = 1;               // Da�o
         enemyAttack.lifeTime = 3f;             // Tiempo de vida
     }
 
@@ -42,7 +42,7 @@ public class Level1Stage3 : MonoBehaviour
         EnemyAttack enemyAttack = ataqueGO.GetComponent<EnemyAttack>();
         enemyAttack.direction = Vector2.left;  // Hacia la izquierda
         enemyAttack.speed = 5f;                // Velocidad
-        enemyAttack.damage = 2;               // Da�o
+        enemyAttack.damage = 1;               // Da�o
         enemyAttack.lifeTime = 3f;             // Tiempo de vida
     }
 
@@ -55,7 +55,7 @@ public class Level1Stage3 : MonoBehaviour
         EnemyAttack enemyAttack = ataqueGO.GetComponent<EnemyAttack>();
         enemyAttack.direction = Vector2.left;  // Hacia la izquierda
         enemyAttack.speed = 5f;                // Velocidad
-        enemyAttack.damage = 2;               // Da�o
+        enemyAttack.damage = 1;               // Da�o
         enemyAttack.lifeTime = 3f;             // Tiempo de vida
     }
 }

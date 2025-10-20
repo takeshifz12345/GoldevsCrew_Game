@@ -4,7 +4,7 @@ public class EnemyAttack : MonoBehaviour
 {
     public float speed = 5f;       // Velocidad de movimiento
     public float lifeTime = 3f;    // Tiempo de vida
-    public int damage = 2;        // Daño al jugador
+    public int damage = 1;        // Daño al jugador
     public Vector2 direction;      // Dirección de movimiento (-1,0 izquierda / 1,0 derecha / 0,1 arriba etc.)
 
     void Start()
