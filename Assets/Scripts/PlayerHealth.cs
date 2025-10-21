@@ -14,7 +14,9 @@ public class PlayerHealth : MonoBehaviour
     public UIHealth uIHealth;
     public UICooldown uICooldown;
     public UISignal uISignal;
-    
+
+    private Animator animator;
+
     public GameObject GameOver; // Arrastrar el Canvas desde el Inspector
     
 
@@ -36,6 +38,9 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth += signaLevel;
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+            animator.SetTrigger("isCall");
+
             OnHealthChanged();
 
             StartHealCooldown();
@@ -81,6 +86,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         uIHealth.UpdateHealthUI(currentHealth);
         uICooldown.UpdateCooldownUI(healCooldownTimer);
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -95,6 +101,4 @@ public class PlayerHealth : MonoBehaviour
 
         Time.timeScale = 0f; // Pausa el juego si quieres
     }
-  
-
 }

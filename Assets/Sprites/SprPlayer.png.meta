@@ -26,6 +26,33 @@ TextureImporter:
   - first:
       213: -4576780055325211714
     second: SprPlayer_7
+  - first:
+      213: -7151533406705662383
+    second: SprPlayer_8
+  - first:
+      213: 500004656143660390
+    second: SprPlayer_9
+  - first:
+      213: 7091524547946512590
+    second: SprPlayer_10
+  - first:
+      213: 6560230898102190277
+    second: SprPlayer_11
+  - first:
+      213: -2462301863999278990
+    second: SprPlayer_12
+  - first:
+      213: -5356273102383890934
+    second: SprPlayer_13
+  - first:
+      213: 1282825646391736194
+    second: SprPlayer_14
+  - first:
+      213: 846678099610110255
+    second: SprPlayer_15
+  - first:
+      213: 3529712131161736515
+    second: SprPlayer_16
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,7 +156,7 @@ TextureImporter:
         width: 200
         height: 300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -151,7 +178,7 @@ TextureImporter:
         width: 200
         height: 300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -173,7 +200,7 @@ TextureImporter:
         width: 200
         height: 300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -195,7 +222,7 @@ TextureImporter:
         width: 200
         height: 300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -217,7 +244,7 @@ TextureImporter:
         width: 200
         height: 300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -239,7 +266,7 @@ TextureImporter:
         width: 200
         height: 300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -261,7 +288,7 @@ TextureImporter:
         width: 200
         height: 300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -283,7 +310,7 @@ TextureImporter:
         width: 200
         height: 300
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -296,11 +323,99 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SprPlayer_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15648fdc146a0cc90800000000000000
+      internalID: -7151533406705662383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprPlayer_9
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 600
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665fb7be59f50f600800000000000000
+      internalID: 500004656143660390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprPlayer_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 600
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec0805cf0082a6260800000000000000
+      internalID: 7091524547946512590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprPlayer_11
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 600
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c04ce58e3f9a0b50800000000000000
+      internalID: 6560230898102190277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9b3e9d205d7146d4f97139b684c1e8f7
+    spriteID: f4f81d2a987f41042bb20d8015b121b9
     internalID: 0
     vertices: []
     indices: 
@@ -312,12 +427,16 @@ TextureImporter:
     nameFileIdTable:
       SprPlayer_0: -6301788168454656929
       SprPlayer_1: -2065736059284530077
+      SprPlayer_10: 7091524547946512590
+      SprPlayer_11: 6560230898102190277
       SprPlayer_2: -8966871193435044693
       SprPlayer_3: 682878716350542876
       SprPlayer_4: 6355535243818967332
       SprPlayer_5: 1813800952284994127
       SprPlayer_6: -4707448254065870839
       SprPlayer_7: -4576780055325211714
+      SprPlayer_8: -7151533406705662383
+      SprPlayer_9: 500004656143660390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
