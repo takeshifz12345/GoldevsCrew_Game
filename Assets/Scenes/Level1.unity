@@ -6943,7 +6943,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00024414062, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1184199354
@@ -6966,7 +6966,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7221141562761245361, guid: 949cf892448d63843b21e3b1946a3b54, type: 3}
+  m_Sprite: {fileID: 9160092014385127307, guid: 8b581868d40ed004b9a93edba9879a2f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8343,7 +8343,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7221141562761245361, guid: 949cf892448d63843b21e3b1946a3b54, type: 3}
+  m_Sprite: {fileID: 141891710, guid: 8b581868d40ed004b9a93edba9879a2f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10093,7 +10093,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 168}
+  m_SizeDelta: {x: 200, y: 252}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1889087189
 MonoBehaviour:
@@ -10798,7 +10798,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 84}
+  m_SizeDelta: {x: 200, y: 252}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2028025760
 MonoBehaviour:
@@ -10985,7 +10985,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7221141562761245361, guid: 949cf892448d63843b21e3b1946a3b54, type: 3}
+  m_Sprite: {fileID: -1679723165460776252, guid: 8b581868d40ed004b9a93edba9879a2f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11634,8 +11634,15 @@ MonoBehaviour:
   signalImage1: {fileID: 2050156160}
   signalImage2: {fileID: 1184199354}
   signalImage3: {fileID: 1474019147}
-  SprSignalOn: {fileID: -7221141562761245361, guid: 949cf892448d63843b21e3b1946a3b54, type: 3}
-  SprSignalOff: {fileID: -1706673280111543478, guid: 522ceb8c53274da47bf04c9ba6eac92c, type: 3}
+  SprSignalNull1: {fileID: 1585559326, guid: 8b581868d40ed004b9a93edba9879a2f, type: 3}
+  SprSignalNull2: {fileID: -586139414, guid: 8b581868d40ed004b9a93edba9879a2f, type: 3}
+  SprSignalNull3: {fileID: -1448345595, guid: 8b581868d40ed004b9a93edba9879a2f, type: 3}
+  SprSignalLow1: {fileID: 1100238698, guid: 8b581868d40ed004b9a93edba9879a2f, type: 3}
+  SprSignalGood1: {fileID: -1125446326, guid: 8b581868d40ed004b9a93edba9879a2f, type: 3}
+  SprSignalGood2: {fileID: 924257742, guid: 8b581868d40ed004b9a93edba9879a2f, type: 3}
+  SprSignalFull1: {fileID: -1679723165460776252, guid: 8b581868d40ed004b9a93edba9879a2f, type: 3}
+  SprSignalFull2: {fileID: 9160092014385127307, guid: 8b581868d40ed004b9a93edba9879a2f, type: 3}
+  SprSignalFull3: {fileID: 141891710, guid: 8b581868d40ed004b9a93edba9879a2f, type: 3}
 --- !u!114 &2125258101
 MonoBehaviour:
   m_ObjectHideFlags: 0
