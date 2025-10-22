@@ -741,6 +741,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam1: {fileID: 519420031}
+  button: {fileID: 1934990887}
+  punto3: {fileID: 2103774909}
+  punto4: {fileID: 1096216558}
+  punto7: {fileID: 1651518382}
+  cam3: {fileID: 1542728340}
+  cam4: {fileID: 951737206}
+  jugador: {fileID: 1285514081}
+  canvasGameOver: {fileID: 602369409}
 --- !u!4 &209731837
 Transform:
   m_ObjectHideFlags: 0
@@ -4868,7 +4876,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Men\xF9"
+  m_text: "Men\xFA"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

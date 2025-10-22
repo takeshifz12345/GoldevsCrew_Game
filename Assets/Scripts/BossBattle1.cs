@@ -48,48 +48,54 @@ public class BossBattle1 : MonoBehaviour
 
     private IEnumerator LanzarAtaquesAbajo()
     {
-        for (int i = 0; i < 5; i++)
+        if (flag)
         {
-            for (int j = 0; j < 1; j++)
+            for (int i = 0; i < 5; i++)
             {
-                float spawnX = Random.Range(spawnXADown, spawnXBDown);
-                Vector2 posSpawn = new Vector2(spawnX, spawnYDown);
+                for (int j = 0; j < 1; j++)
+                {
+                    float spawnX = Random.Range(spawnXADown, spawnXBDown);
+                    Vector2 posSpawn = new Vector2(spawnX, spawnYDown);
 
-                GameObject ataqueGO = Instantiate(ataques2, posSpawn, Quaternion.identity);
+                    GameObject ataqueGO = Instantiate(ataques2, posSpawn, Quaternion.identity);
 
-                EnemyAttack enemyAttack = ataqueGO.GetComponent<EnemyAttack>();
-                enemyAttack.direction = Vector2.down;
-                enemyAttack.speed = 5f;
-                enemyAttack.damage = 1;
-                enemyAttack.lifeTime = 6f;
+                    EnemyAttack enemyAttack = ataqueGO.GetComponent<EnemyAttack>();
+                    enemyAttack.direction = Vector2.down;
+                    enemyAttack.speed = 5f;
+                    enemyAttack.damage = 1;
+                    enemyAttack.lifeTime = 6f;
+                }
+                yield return new WaitForSeconds(intervaloAtaques);
             }
-            yield return new WaitForSeconds(intervaloAtaques);
-        }
 
-        StartCoroutine(LanzarAtaquesIzquierda());
+            StartCoroutine(LanzarAtaquesIzquierda());
+        }
     }
 
     private IEnumerator LanzarAtaquesIzquierda()
     {
-        for (int i = 0; i < 3; i++)
+        if (flag)
         {
-            for (int j = 0; j < 1; j++)
+            for (int i = 0; i < 3; i++)
             {
-                float spawnY = Random.Range(spawnYALeft, spawnYBLeft);
-                Vector2 posSpawn = new Vector2(spawnXLeft, spawnY);
+                for (int j = 0; j < 1; j++)
+                {
+                    float spawnY = Random.Range(spawnYALeft, spawnYBLeft);
+                    Vector2 posSpawn = new Vector2(spawnXLeft, spawnY);
 
-                GameObject ataqueGO = Instantiate(ataques2, posSpawn, Quaternion.identity);
+                    GameObject ataqueGO = Instantiate(ataques2, posSpawn, Quaternion.identity);
 
-                EnemyAttack enemyAttack = ataqueGO.GetComponent<EnemyAttack>();
-                enemyAttack.direction = Vector2.left;
-                enemyAttack.speed = 5f;
-                enemyAttack.damage = 1;
-                enemyAttack.lifeTime = 30f;
+                    EnemyAttack enemyAttack = ataqueGO.GetComponent<EnemyAttack>();
+                    enemyAttack.direction = Vector2.left;
+                    enemyAttack.speed = 5f;
+                    enemyAttack.damage = 1;
+                    enemyAttack.lifeTime = 30f;
+                }
+                yield return new WaitForSeconds(intervaloAtaques);
             }
-            yield return new WaitForSeconds(intervaloAtaques);
-        }
 
-        CambiarEstadosZonas();
+            CambiarEstadosZonas();
+        }   
     }
 
     private void CambiarEstadosZonas()

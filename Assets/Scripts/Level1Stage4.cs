@@ -38,41 +38,50 @@ public class Level1Stage4 : MonoBehaviour
 
     private void Inicio()
     {
-        StartCoroutine(LanzarAtaques());
+        if (flag)
+        {
+            StartCoroutine(LanzarAtaques());
+        }
     }
 
     private IEnumerator LanzarAtaques()
     {
-        for (int i = 0; i < 5; i++)
+        if (flag)
         {
-            for (int j = 0; j < 3; j++)
+            for (int i = 0; i < 5; i++)
             {
-                float spawnX = Random.Range(spawnXA, spawnXB);
-                Vector2 spawnPos = new Vector2(spawnX, spawnY);
-                Instantiate(ataques, spawnPos, Quaternion.identity);
+                for (int j = 0; j < 3; j++)
+                {
+                    float spawnX = Random.Range(spawnXA, spawnXB);
+                    Vector2 spawnPos = new Vector2(spawnX, spawnY);
+                    Instantiate(ataques, spawnPos, Quaternion.identity);
+                }
+                yield return new WaitForSeconds(intervaloAtaques);
             }
-            yield return new WaitForSeconds(intervaloAtaques);
-        }
 
-        CambiarEstadosZonas();
+            CambiarEstadosZonas();
+        } 
     }
 
     private void CambiarEstadosZonas()
     {
-        EyeManager[] ojos = { ojo1, ojo2, ojo3, ojo4 };
-        SignalZone[] zonas = { zona1, zona2, zona3, zona4 };
-
-        for (int i = 0; i < ojos.Length; i++)
+        if (flag)
         {
-            // 50% de probabilidad de cambiar estado
-            if (Random.value > 0.5f)
-            {
-                ojos[i].ChangeState();
-                zonas[i].ChangeState(); // Cambia el estado de la zona correspondiente
-            }
-        }
+            EyeManager[] ojos = { ojo1, ojo2, ojo3, ojo4 };
+            SignalZone[] zonas = { zona1, zona2, zona3, zona4 };
 
-        Inicio();
+            for (int i = 0; i < ojos.Length; i++)
+            {
+                // 50% de probabilidad de cambiar estado
+                if (Random.value > 0.5f)
+                {
+                    ojos[i].ChangeState();
+                    zonas[i].ChangeState(); // Cambia el estado de la zona correspondiente
+                }
+            }
+
+            Inicio();
+        }   
     }
 
     void Update()

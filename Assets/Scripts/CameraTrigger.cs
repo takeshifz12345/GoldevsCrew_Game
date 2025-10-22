@@ -19,7 +19,7 @@ public class CameraTrigger : MonoBehaviour
             ActivateThisCamera();
     }
 
-    private void ActivateThisCamera()
+    public void ActivateThisCamera()
     {
         // Apaga otras cámaras y reactiva sus triggers
         CameraTrigger[] allCameras = FindObjectsByType<CameraTrigger>(FindObjectsSortMode.None);
