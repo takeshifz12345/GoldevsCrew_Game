@@ -4,15 +4,18 @@ public class DialogoPrueba : MonoBehaviour
 {
     public DialogController dialogController;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Colisiona");
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log("Colisiona Jugador");
             dialogController.Enable();
             dialogController.ChangeText("Hola, tonoto");
-            Invoke("dialogController.Disable", 2f);
+            Invoke(nameof(DisableDialog), 2f);
         }
+    }
+
+    private void DisableDialog()
+    {
+        dialogController.Disable();
     }
 }

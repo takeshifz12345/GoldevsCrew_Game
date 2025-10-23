@@ -8,7 +8,7 @@ public class FirstDamage : MonoBehaviour
     public float posY;
     public GameObject ataque;
     public bool flag = false;
-    public InputReader inputReader;
+    //public InputReader inputReader;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -22,7 +22,7 @@ public class FirstDamage : MonoBehaviour
 
                 //acà se debe colocar el còdigo que desactive los inputs del jugador y que luego de x tiempo vuelva a activarse
                
-                if (inputReader != null) StartCoroutine(ReactivarInput(inputReader, 1.25f));
+                //if (inputReader != null) StartCoroutine(ReactivarInput(inputReader, 1.25f));
             }
         }
     }
