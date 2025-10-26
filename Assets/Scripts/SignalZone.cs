@@ -1,63 +1,57 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class SignalZone : MonoBehaviour
 {
-    public int signalValue;
-    public int signalValueCurrent;
+    [Header("Valores de señal")]
+    public int signalValue = 1;
+    private int signalValueCurrent;
 
     private PlayerHealth playerInside; // Referencia al jugador dentro del trigger
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void Awake()
     {
-        if (other.CompareTag("Player"))
-        {
-            playerInside = other.GetComponent<PlayerHealth>();
-            if (playerInside != null)
-            {
-                playerInside.UpdateSignal(signalValueCurrent);
-            }
-        }
+        signalValueCurrent = signalValue;
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            playerInside = null; // El jugador salió
-        }
+        if (!other.CompareTag("Player")) return;
+
+        playerInside = other.GetComponent<PlayerHealth>();
+        UpdatePlayerSignal();
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+
+        playerInside = null; // El jugador salió
+    }
+
+    /// <summary>
+    /// Alterna el estado de la señal entre 0 y el valor máximo
+    /// </summary>
     public void ChangeState()
     {
-        if (signalValueCurrent == 0)
-        {
-            signalValueCurrent = signalValue;
-        }
-        else
-        {
-            signalValueCurrent = 0;
-        }
-
-        // Si hay un jugador dentro, actualizar su señal
-        if (playerInside != null)
-        {
-            playerInside.UpdateSignal(signalValueCurrent);
-        }
+        signalValueCurrent = (signalValueCurrent == 0) ? signalValue : 0;
+        UpdatePlayerSignal();
     }
 
+    /// <summary>
+    /// Activa la señal con su valor máximo
+    /// </summary>
     public void Enable()
     {
         signalValueCurrent = signalValue;
-
-        // Si hay un jugador dentro, actualizar su señal
-        if (playerInside != null)
-        {
-            playerInside.UpdateSignal(signalValueCurrent);
-        }
+        UpdatePlayerSignal();
     }
 
-    void Start()
+    /// <summary>
+    /// Actualiza la señal del jugador si hay uno dentro
+    /// </summary>
+    private void UpdatePlayerSignal()
     {
-        signalValueCurrent = signalValue;
+        playerInside?.UpdateSignal(signalValueCurrent);
     }
 }

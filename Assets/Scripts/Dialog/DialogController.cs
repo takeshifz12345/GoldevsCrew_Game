@@ -8,37 +8,43 @@ public class DialogController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogText;
     [SerializeField] private Image dialogImage;
 
-    private void Start()
+    private void Awake()
     {
-        // Si no están asignados en el inspector, intenta buscarlos automáticamente
-        if (dialogText == null)
-            dialogText = GameObject.Find("DialogText")?.GetComponent<TextMeshProUGUI>();
-
-        if (dialogImage == null)
-            dialogImage = GameObject.Find("DialogImage")?.GetComponent<Image>();
+        // Busca automáticamente solo si no se asignó en el inspector
+        dialogText ??= GameObject.Find("DialogText")?.GetComponent<TextMeshProUGUI>();
+        dialogImage ??= GameObject.Find("DialogImage")?.GetComponent<Image>();
 
         // Desactiva ambos al inicio
-        if (dialogText != null) dialogText.gameObject.SetActive(false);
-        if (dialogImage != null) dialogImage.gameObject.SetActive(false);
+        SetActive(false);
     }
 
-    public void Enable()
-    {
-        if (dialogText != null) dialogText.gameObject.SetActive(true);
-        if (dialogImage != null) dialogImage.gameObject.SetActive(true);
-    }
+    /// <summary>
+    /// Activa el diálogo
+    /// </summary>
+    public void Enable() => SetActive(true);
 
-    public void Disable()
-    {
-        if (dialogText != null) dialogText.gameObject.SetActive(false);
-        if (dialogImage != null) dialogImage.gameObject.SetActive(false);
-    }
+    /// <summary>
+    /// Desactiva el diálogo
+    /// </summary>
+    public void Disable() => SetActive(false);
 
+    /// <summary>
+    /// Cambia el texto del diálogo
+    /// </summary>
     public void ChangeText(string newText)
     {
         if (dialogText != null)
             dialogText.text = newText;
         else
-            Debug.LogWarning("No hay TextMeshPro asignado al DialogController.");
+            Debug.LogWarning("DialogController: No hay TextMeshPro asignado.");
+    }
+
+    /// <summary>
+    /// Activa o desactiva ambos elementos
+    /// </summary>
+    private void SetActive(bool value)
+    {
+        if (dialogText != null) dialogText.gameObject.SetActive(value);
+        if (dialogImage != null) dialogImage.gameObject.SetActive(value);
     }
 }

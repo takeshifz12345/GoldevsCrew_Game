@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class FirstDamage : MonoBehaviour
 {
@@ -8,7 +7,8 @@ public class FirstDamage : MonoBehaviour
     public float posY;
     public GameObject ataque;
     public bool flag = false;
-    //public InputReader inputReader;
+    public InputReader inputReader;
+    public DialogController dialogController;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,32 +16,49 @@ public class FirstDamage : MonoBehaviour
         {
             if (!flag)
             {
+                // Desactivar los controles del jugador
+                inputReader.DisableInput();
+
+                // Iniciar el diálogo
+                dialogController.Enable();
+                
                 Vector2 posSpawn = new Vector2(posX, posY);
                 Instantiate(ataque, posSpawn, Quaternion.identity);
                 flag = true;
 
-                //acà se debe colocar el còdigo que desactive los inputs del jugador y que luego de x tiempo vuelva a activarse
-               
-                //if (inputReader != null) StartCoroutine(ReactivarInput(inputReader, 1.25f));
+                Dialogo1();
+
+                Invoke(nameof(Dialogo2), 5f);
+                Invoke(nameof(Dialogo3), 7f);
+                Invoke(nameof(Dialogo4), 9f);
+                Invoke(nameof(FinalizarDialogo), 12f);
             }
         }
     }
 
-    private IEnumerator ReactivarInput(InputReader p, float t)
+    private void Dialogo1()
     {
-        p.DisableInput();
-        yield return new WaitForSeconds(t);
-             p.EnableInput();
-
+        dialogController.ChangeText("—Por si acaso, no pude quitar el desastre que tú y tu amiga hicieron en la pared.");
     }
 
-    void Start()
+    private void Dialogo2()
     {
-
+        dialogController.ChangeText("—Jester se quedó sin pintura amarilla.");
     }
 
-    void Update()
+    private void Dialogo3()
     {
-        
+        dialogController.ChangeText("—No salgas de esta habitación.");
+    }
+
+    private void Dialogo4()
+    {
+        dialogController.ChangeText("—Te estaré viendo.");
+    }
+
+    private void FinalizarDialogo()
+    {
+        dialogController.Disable();
+        inputReader.EnableInput();
     }
 }

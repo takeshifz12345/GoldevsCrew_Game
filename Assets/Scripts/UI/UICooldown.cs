@@ -4,18 +4,11 @@ using UnityEngine.UI;
 public class UICooldown : MonoBehaviour
 {
     public Image cooldownImage;
-    public Sprite cooldownImageOn;
-    public Sprite cooldownImageOff;
+    public Sprite spriteActive;
+    public Sprite spriteInactive;
 
     public void UpdateCooldownUI(float cooldown)
     {
-        if (cooldown < 1)
-        {
-            cooldownImage.sprite = cooldownImageOn;
-        }
-        else
-        {
-            cooldownImage.sprite = cooldownImageOff;
-        }
+        cooldownImage.sprite = cooldown < 1f ? spriteActive : spriteInactive;
     }
 }

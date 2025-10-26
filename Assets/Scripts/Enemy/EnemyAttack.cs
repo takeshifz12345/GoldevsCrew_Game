@@ -1,43 +1,38 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class EnemyAttack : MonoBehaviour
 {
+    [Header("Configuración del proyectil")]
     public float speed = 5f;       // Velocidad de movimiento
     public float lifeTime = 3f;    // Tiempo de vida
-    public int damage = 1;        // Daño al jugador
-    public Vector2 direction;      // Dirección de movimiento (-1,0 izquierda / 1,0 derecha / 0,1 arriba etc.)
+    public int damage = 1;         // Daño al jugador
+    public Vector2 direction = Vector2.right; // Dirección inicial
 
-    void Start()
+    private void Awake()
     {
-        // Normalizar direcci�n por si se pasa alg�n valor chueco
+        // Normalizar dirección para evitar valores raros
         direction = direction.normalized;
     }
 
-    void Update()
+    private void Update()
     {
-        // Movimiento
-        transform.Translate(direction * speed * Time.deltaTime);
+        // Movimiento usando Transform (simple, útil para proyectiles rápidos)
+        transform.position += (Vector3)(direction * speed * Time.deltaTime);
 
-        // Tiempo de vida
+        // Contador de vida
         lifeTime -= Time.deltaTime;
         if (lifeTime <= 0f)
-        {
             Destroy(gameObject);
-        }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+        if (!other.CompareTag("Player")) return;
 
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage);
-            }
+        var playerHealth = other.GetComponent<PlayerHealth>();
+        playerHealth?.TakeDamage(damage);
 
-            Destroy(gameObject); // Destruir proyectil tras impacto
-        }
+        Destroy(gameObject);
     }
 }

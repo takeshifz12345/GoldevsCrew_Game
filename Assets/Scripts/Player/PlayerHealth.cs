@@ -1,59 +1,68 @@
-using System;
-using JetBrains.Annotations;
 using UnityEngine;
-
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth;
+    [Header("Salud")]
+    public int maxHealth = 100;
     public int currentHealth;
-    public bool canHeal;
-    public float healCooldown;
+
+    [Header("Curación")]
+    public bool canHeal = true;
+    public float healCooldown = 5f;
     public float healCooldownTimer;
-    public int signaLevel;
+    public int signaLevel = 10;
+
+    [Header("UI")]
     public UIHealth uIHealth;
     public UICooldown uICooldown;
     public UISignal uISignal;
 
+    [Header("Referencias")]
+    public GameObject GameOver;
+
     private Animator animator;
 
-    public GameObject GameOver; // Arrastrar el Canvas desde el Inspector
-    
+    void Start()
+    {
+        currentHealth = maxHealth;
+        animator = GetComponent<Animator>();
+
+        uIHealth?.UpdateHealthUI(currentHealth);
+        uICooldown?.UpdateCooldownUI(healCooldownTimer);
+    }
+
+    void Update()
+    {
+        UpdateCooldown();
+        uIHealth?.UpdateHealthUI(currentHealth);
+    }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        OnHealthChanged();
+        currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
+        uIHealth?.UpdateHealthUI(currentHealth);
 
-       if (currentHealth <= 0)
-    {
-        Die(); // <-- Aquí llamas a Die cuando el jugador muere
-    }
+        if (currentHealth <= 0) Die();
     }
 
     public void Heal()
     {
-        if (canHeal)
-        {
-            currentHealth += signaLevel;
-            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        if (!canHeal) return;
 
-            animator.SetTrigger("isCall");
+        currentHealth = Mathf.Clamp(currentHealth + signaLevel, 0, maxHealth);
+        animator?.SetTrigger("isCall");
+        uIHealth?.UpdateHealthUI(currentHealth);
 
-            OnHealthChanged();
-
-            StartHealCooldown();
-        }
+        StartHealCooldown();
     }
 
-    public void StartHealCooldown()
+    private void StartHealCooldown()
     {
         canHeal = false;
         healCooldownTimer = 0f;
     }
 
-    public void UpdateCooldown()
+    private void UpdateCooldown()
     {
         if (!canHeal)
         {
@@ -65,14 +74,8 @@ public class PlayerHealth : MonoBehaviour
                 healCooldownTimer = 0f;
             }
 
-            int intCooldown = (int)healCooldownTimer;
-            uICooldown.UpdateCooldownUI(intCooldown);
+            uICooldown?.UpdateCooldownUI((int)healCooldownTimer);
         }
-    }
-
-    public void OnHealthChanged()
-    {
-        uIHealth.UpdateHealthUI(currentHealth);
     }
 
     public void UpdateSignal(int newSignal)
@@ -81,24 +84,11 @@ public class PlayerHealth : MonoBehaviour
         uISignal.UpdateSignalUI(signaLevel);
     }
 
-    void Start()
-    {
-        currentHealth = maxHealth;
-        uIHealth.UpdateHealthUI(currentHealth);
-        uICooldown.UpdateCooldownUI(healCooldownTimer);
-        animator = GetComponent<Animator>();
-    }
-
-    void Update()
-    {
-        UpdateCooldown();
-        uIHealth.UpdateHealthUI(currentHealth);
-    }
     private void Die()
     {
-         if (GameOver != null)
-            GameOver.SetActive(true); // Mostrar canvas de Game Over
+        if (GameOver != null)
+            GameOver.SetActive(true);
 
-        Time.timeScale = 0f; // Pausa el juego si quieres
+        Time.timeScale = 0f;
     }
 }

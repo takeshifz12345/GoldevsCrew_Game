@@ -29,30 +29,27 @@ public class DialogStage2 : MonoBehaviour
 
     private void Dialogo1()
     {
-        dialogController.ChangeText("Por si acaso, no pude quitar el desastre que tú y tu amiga hicieron en la pared.");
+        dialogController.ChangeText("PARA SALTAR PULSE ESPACIO O LA TECLA W.");
     }
 
     private void Dialogo2()
     {
-        dialogController.ChangeText("Jester se quedó sin pintura amarilla.");
+        dialogController.ChangeText("PARA CURARSE PRESIONA LA TECLA Q.");
     }
 
     private void Dialogo3()
     {
-        dialogController.ChangeText("No salgas de esta habitación.");
+        dialogController.ChangeText("LA VIDA CURADA DEPENDE DE LA SEÑAL QUE SE TENGA.");
     }
 
     private void Dialogo4()
     {
-        dialogController.ChangeText("Te estaré viendo.");
+        dialogController.ChangeText("—Te estaré viendo.");
     }
 
     private void FinalizarDialogo()
     {
         dialogController.Disable();
         inputReader.EnableInput();
-
-        // Si quieres, puedes desactivar este objeto después de reproducir el diálogo:
-        // gameObject.SetActive(false);
     }
 }

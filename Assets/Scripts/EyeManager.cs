@@ -1,23 +1,28 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class EyeManager : MonoBehaviour
 {
-    public Animator animator;
+    private Animator animator;
 
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    /// <summary>
+    /// Abre o cierra el ojo
+    /// </summary>
     public void SetOpen(bool open)
     {
         animator.SetBool("isOpen", open);
     }
 
+    /// <summary>
+    /// Cambia el estado del ojo al contrario
+    /// </summary>
     public void ChangeState()
     {
-        // Cambia el valor actual de "isOpen" al contrario
-        bool currentState = animator.GetBool("isOpen");
-        animator.SetBool("isOpen", !currentState);
-    }
-
-    void Update()
-    {
-
+        animator.SetBool("isOpen", !animator.GetBool("isOpen"));
     }
 }

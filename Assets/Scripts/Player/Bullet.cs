@@ -7,11 +7,6 @@ public class Bullet : MonoBehaviour
     public int damage;
     public int direction;
 
-    public void Initialize(int dir)
-    {
-        
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         // Si choca con un enemigo
@@ -31,15 +26,5 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
     }
 }

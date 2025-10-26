@@ -24,16 +24,60 @@ public class Level1Stage4 : MonoBehaviour
     public GameObject enemigo;
     public GameObject canvas;
 
+    public InputReader inputReader;
+    public DialogController dialogController;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !flag)
         {
             flag = true;
-            Inicio();
-            canvas.SetActive(true);
-
-            enemigo.GetComponent<EnemyStatus>().active = true;
+            inputReader.DisableInput();
+            dialogController.Enable();
+            Dialogo1();
+            Invoke(nameof(Dialogo2), 3f);
+            Invoke(nameof(Dialogo3), 5f);
+            Invoke(nameof(Dialogo4), 8f);
+            Invoke(nameof(Dialogo5), 12f);
+            Invoke(nameof(FinalizarDialogo), 17f);
         }
+    }
+
+    private void Dialogo1()
+    {
+        dialogController.ChangeText("—¿Tanto quieres ver a tu amiga?");
+    }
+
+    private void Dialogo2()
+    {
+        dialogController.ChangeText("—Lo siento.");
+    }
+
+    private void Dialogo3()
+    {
+        dialogController.ChangeText("—Pero son ordenes.");
+    }
+
+    private void Dialogo4()
+    {
+        dialogController.ChangeText("PRESIONA LA TECLA E PARA DISPARAR.");
+    }
+
+    private void Dialogo5()
+    {
+        dialogController.ChangeText("PERO CUIDADO POR QUE PIERDES VIDA POR DISPARO.");
+    }
+
+    private void FinalizarDialogo()
+    {
+        dialogController.Disable();
+        inputReader.EnableInput();
+
+        Inicio();
+
+        canvas.SetActive(true);
+
+        enemigo.GetComponent<EnemyStatus>().active = true;
     }
 
     private void Inicio()

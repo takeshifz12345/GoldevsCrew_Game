@@ -26,18 +26,25 @@ public class BossBattle1 : MonoBehaviour
 
     public GameObject wall;
 
+    public InputReader inputReader;
+    public DialogController dialogController;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !flag)
         {
             flag = true;
-            Inicio();
-            canvas.SetActive(true);
 
-            enemigo.GetComponent<EnemyStatus>().active = true;
-            enemigo.GetComponent<EnemyStatus>().TakeDamage(0);
-
-            wall.SetActive(true);
+            inputReader.DisableInput();
+            dialogController.Enable();
+            Dialogo1();
+            Invoke(nameof(Dialogo2), 5f);
+            Invoke(nameof(Dialogo3), 7f);
+            Invoke(nameof(Dialogo4), 9f);
+            Invoke(nameof(Dialogo5), 5f);
+            Invoke(nameof(Dialogo6), 7f);
+            Invoke(nameof(Dialogo7), 9f);
+            Invoke(nameof(FinalizarDialogo), 12f);
         }
     }
 
@@ -132,5 +139,54 @@ public class BossBattle1 : MonoBehaviour
 
             Destroy(this);
         }
+    }
+
+    private void Dialogo1()
+    {
+        dialogController.ChangeText("—Me duele ver tu rostro.");
+    }
+
+    private void Dialogo2()
+    {
+        dialogController.ChangeText("—Pero me duele aún más ya no poder hacerlo.");
+    }
+
+    private void Dialogo3()
+    {
+        dialogController.ChangeText("—¿En serio quieres verla de nuevo?");
+    }
+
+    private void Dialogo4()
+    {
+        dialogController.ChangeText("—¿A pesar de lo que pasó en el puente?");
+    }
+
+    private void Dialogo5()
+    {
+        dialogController.ChangeText("—...");
+    }
+
+    private void Dialogo6()
+    {
+        dialogController.ChangeText("—Lo siento.");
+    }
+
+    private void Dialogo7()
+    {
+        dialogController.ChangeText("—Ordenes son ordenes.");
+    }
+
+    private void FinalizarDialogo()
+    {
+        dialogController.Disable();
+        inputReader.EnableInput();
+
+        Inicio();
+        canvas.SetActive(true);
+
+        enemigo.GetComponent<EnemyStatus>().active = true;
+        enemigo.GetComponent<EnemyStatus>().TakeDamage(0);
+
+        wall.SetActive(true);
     }
 }
