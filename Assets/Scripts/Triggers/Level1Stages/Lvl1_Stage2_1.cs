@@ -26,11 +26,11 @@ public class Level1Stage2_1 : StageController
             {
                 prefab = ataque,
                 position = ataqueSpawn,
-                direction = Vector2.down,   // Ataque cae vertical
-                speed = 5f,
+                direction = Vector2.down,
+                speed = 15f,
                 damage = 1,
                 lifeTime = 3f,
-                delay = 0.5f                // Pequeño retraso para dar tiempo al diálogo inicial
+                delay = 0.5f
             }
         };
 

@@ -21,12 +21,22 @@ public class StageController : MonoBehaviour
 
     private bool triggered = false;
 
+    protected virtual void Awake()
+    {
+        // Si no se asignan, se buscan automáticamente en la escena
+        if (inputReader == null)
+            inputReader = FindAnyObjectByType<InputReader>();
+
+        if (dialogController == null)
+            dialogController = FindAnyObjectByType<DialogController>();
+    }
+
     protected void TriggerStage(Collider2D other)
     {
         if (other.CompareTag("Player") && !triggered)
         {
             triggered = true;
-            inputReader.DisableInput();
+            inputReader?.DisableInput();
         }
     }
 
@@ -37,14 +47,16 @@ public class StageController : MonoBehaviour
 
     private IEnumerator DialogRoutine(string[] lines, float[] times, System.Action onComplete)
     {
-        dialogController.Enable();
+        dialogController?.Enable();
+
         for (int i = 0; i < lines.Length; i++)
         {
-            dialogController.ChangeText(lines[i]);
+            dialogController?.ChangeText(lines[i]);
             yield return new WaitForSeconds(times[i]);
         }
-        dialogController.Disable();
-        inputReader.EnableInput();
+
+        dialogController?.Disable();
+        inputReader?.EnableInput();
         onComplete?.Invoke();
     }
 
@@ -62,10 +74,13 @@ public class StageController : MonoBehaviour
 
             GameObject go = Instantiate(attack.prefab, attack.position, Quaternion.identity);
             var ea = go.GetComponent<EnemyAttack>();
-            ea.direction = attack.direction;
-            ea.speed = attack.speed;
-            ea.damage = attack.damage;
-            ea.lifeTime = attack.lifeTime;
+            if (ea != null)
+            {
+                ea.direction = attack.direction;
+                ea.speed = attack.speed;
+                ea.damage = attack.damage;
+                ea.lifeTime = attack.lifeTime;
+            }
         }
     }
 }

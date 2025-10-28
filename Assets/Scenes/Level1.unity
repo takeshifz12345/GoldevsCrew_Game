@@ -568,6 +568,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5a4435b31d13340a20e91050bc201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputReader: {fileID: 265182838}
+  dialogController: {fileID: 1859002837}
+  ataque: {fileID: 3161860528703980097, guid: 3b13288bc861b9b4c93b74733ffd52eb, type: 3}
+  ataqueSpawn: {x: 13.5, y: 4}
 --- !u!114 &265182838 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5625389665470754443, guid: a650aff33ab9e8846810808a4ebfb81b, type: 3}
@@ -5480,6 +5484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165a99df0ab38b94fb4fe65ad5b38f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputReader: {fileID: 265182838}
+  dialogController: {fileID: 1859002837}
 --- !u!1001 &1210139895
 PrefabInstance:
   m_ObjectHideFlags: 0
