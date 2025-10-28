@@ -7,12 +7,14 @@ public class DialogController : MonoBehaviour
     [Header("Referencias del diálogo")]
     [SerializeField] private TextMeshProUGUI dialogText;
     [SerializeField] private Image dialogImage;
+    [SerializeField] private Image dialogProfile;
 
     private void Awake()
     {
         // Busca automáticamente solo si no se asignó en el inspector
         dialogText ??= GameObject.Find("DialogText")?.GetComponent<TextMeshProUGUI>();
         dialogImage ??= GameObject.Find("DialogImage")?.GetComponent<Image>();
+        dialogProfile ??= GameObject.Find("DialogProfile")?.GetComponent<Image>();
 
         // Desactiva ambos al inicio
         SetActive(false);
@@ -46,5 +48,6 @@ public class DialogController : MonoBehaviour
     {
         if (dialogText != null) dialogText.gameObject.SetActive(value);
         if (dialogImage != null) dialogImage.gameObject.SetActive(value);
+        if (dialogProfile != null) dialogProfile.gameObject.SetActive(value);
     }
 }

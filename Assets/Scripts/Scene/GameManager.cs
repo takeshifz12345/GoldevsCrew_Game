@@ -21,23 +21,24 @@ public class GameManager : MonoBehaviour
 
     private void Reiniciar()
     {
-        if (punto4.GetComponent<Level1Stage4>().flag)
+        if (punto4.GetComponent<Lvl1_Stage4>().triggered)
         {
             jugador.transform.position = punto3.transform.position;
-            punto4.GetComponent<Level1Stage4>().flag = false;
+            punto4.GetComponent<Lvl1_Stage4>().triggered = false;
             cam3.GetComponent<CameraTrigger>().ActivateThisCamera();
-            punto4.GetComponent<Level1Stage4>().enemigo.GetComponent<EnemyStatus>().currentHealth = punto4.GetComponent<Level1Stage4>().enemigo.GetComponent<EnemyStatus>().maxHealth;
+            punto4.GetComponent<Lvl1_Stage4>().enemigo.GetComponent<EnemyStatus>().currentHealth = punto4.GetComponent<Lvl1_Stage4>().enemigo.GetComponent<EnemyStatus>().maxHealth;
+            punto4.GetComponent<Lvl1_Stage4>().TerminarStage();
         }
-        else
-        {
-            if (punto7.GetComponent<BossBattle1>().flag)
-            {
-                punto7.GetComponent<BossBattle1>().flag = false;
-                jugador.transform.position = punto4.transform.position;
-                cam4.GetComponent<CameraTrigger>().ActivateThisCamera();
-                punto7.GetComponent<BossBattle1>().enemigo.GetComponent<EnemyStatus>().currentHealth = punto7.GetComponent<BossBattle1>().enemigo.GetComponent<EnemyStatus>().maxHealth;
-            }
-        }
+        //else
+        //{
+        //    if (punto7.GetComponent<BossBattle1>().flag)
+        //    {
+        //        punto7.GetComponent<BossBattle1>().flag = false;
+        //        jugador.transform.position = punto4.transform.position;
+        //        cam4.GetComponent<CameraTrigger>().ActivateThisCamera();
+        //        punto7.GetComponent<BossBattle1>().enemigo.GetComponent<EnemyStatus>().currentHealth = punto7.GetComponent<BossBattle1>().enemigo.GetComponent<EnemyStatus>().maxHealth;
+        //    }
+        //}
 
         jugador.GetComponent<PlayerHealth>().currentHealth = jugador.GetComponent<PlayerHealth>().maxHealth;
         jugador.GetComponent<PlayerHealth>().healCooldownTimer = 0;
