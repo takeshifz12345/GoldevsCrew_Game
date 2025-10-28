@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -109,10 +109,10 @@ TextureImporter:
       name: 1000146897_0
       rect:
         serializedVersion: 2
-        x: 42
-        y: 3
-        width: 223
-        height: 681
+        x: 0
+        y: 0
+        width: 300
+        height: 700
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +131,10 @@ TextureImporter:
       name: 1000146897_1
       rect:
         serializedVersion: 2
-        x: 348
-        y: 3
-        width: 224
-        height: 688
+        x: 300
+        y: 0
+        width: 300
+        height: 700
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: 1000146897_2
       rect:
         serializedVersion: 2
-        x: 648
-        y: 3
-        width: 247
-        height: 671
+        x: 600
+        y: 0
+        width: 300
+        height: 700
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e6b6d5e5326c7d449a44a91a92bda7dd
     internalID: 0
     vertices: []
     indices: 

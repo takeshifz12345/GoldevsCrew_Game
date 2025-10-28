@@ -707,6 +707,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5eb656b04d8f54ca98a2b54c987a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam1: {fileID: 0}
+  button: {fileID: 0}
+  punto3: {fileID: 0}
+  punto4: {fileID: 0}
+  punto7: {fileID: 0}
+  cam3: {fileID: 0}
+  cam4: {fileID: 0}
+  jugador: {fileID: 0}
+  canvasGameOver: {fileID: 0}
 --- !u!4 &209731837
 Transform:
   m_ObjectHideFlags: 0
@@ -1035,6 +1044,7 @@ MonoBehaviour:
   ataque: {fileID: 3161860528703980097, guid: 41f61842ca06c144a97b074f03077d52, type: 3}
   flag: 0
   inputReader: {fileID: 265182838}
+  dialogController: {fileID: 0}
 --- !u!61 &245623956
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1232,34 +1242,6 @@ MonoBehaviour:
   playerController: {fileID: 1285514085}
   playerShoot: {fileID: 1285514083}
   playerHealth: {fileID: 1285514082}
-  inputsEnabled: 1
-  jumpAction:
-    m_Name: Jump
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 065f60eb-6dcc-4e3c-887d-5e5e8b1506f5
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  shootAction:
-    m_Name: Shoot
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 5e09d801-8232-46fa-af78-715082a45008
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  callAction:
-    m_Name: Call
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 71c36079-a3ea-4283-83d7-22a83e344f1f
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!4 &265182839
 Transform:
   m_ObjectHideFlags: 0
@@ -1958,7 +1940,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &460115881
@@ -2710,6 +2692,9 @@ MonoBehaviour:
   ojo3: {fileID: 479878472}
   enemigo: {fileID: 948416081}
   canvas: {fileID: 1763269669}
+  wall: {fileID: 0}
+  inputReader: {fileID: 0}
+  dialogController: {fileID: 0}
 --- !u!61 &549819406
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4413,7 +4398,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &948416085
@@ -5531,6 +5516,8 @@ MonoBehaviour:
   ojo4: {fileID: 1749521230}
   enemigo: {fileID: 1260117756}
   canvas: {fileID: 1763269669}
+  inputReader: {fileID: 0}
+  dialogController: {fileID: 0}
 --- !u!1 &1147717417
 GameObject:
   m_ObjectHideFlags: 0
@@ -6169,7 +6156,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1220569461
@@ -6452,7 +6439,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1260117759
@@ -6531,6 +6518,7 @@ MonoBehaviour:
   uIHealth: {fileID: 1590329484}
   uICooldown: {fileID: 1336966783}
   uISignal: {fileID: 2125258100}
+  GameOver: {fileID: 0}
 --- !u!114 &1285514083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6545,8 +6533,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2121406998389728491, guid: c5e8e2f72a885284db142586d74a4167, type: 3}
   bulletSpeed: 5
-  playerController: {fileID: 1285514085}
-  playerHealth: {fileID: 1285514082}
 --- !u!4 &1285514084
 Transform:
   m_ObjectHideFlags: 0
@@ -6812,8 +6798,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownImage: {fileID: 1814379567}
-  cooldownImageOn: {fileID: -3306583105286333510, guid: 24b01c8351436d841b1c8ebda5575cfa, type: 3}
-  cooldownImageOff: {fileID: -3196409013701600723, guid: e274535b61f56ab48bd43a52a7d44fa5, type: 3}
+  spriteActive: {fileID: 0}
+  spriteInactive: {fileID: 0}
 --- !u!114 &1336966784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7702,16 +7688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d169465e5054cd84ebb0598cc7e044e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  star1: {fileID: 752543045}
-  star2: {fileID: 142271165}
-  star3: {fileID: 551541205}
-  star4: {fileID: 825398288}
-  star5: {fileID: 2130353706}
-  star6: {fileID: 1581026965}
-  star7: {fileID: 1671590865}
-  star8: {fileID: 1538889394}
-  star9: {fileID: 269895302}
-  star10: {fileID: 1342201324}
+  stars: []
   SprStarOn: {fileID: 5398230693474030073, guid: b0b47fd03ef5cb645bf701ff3e28ecd2, type: 3}
   SprStarOff: {fileID: -8998069308666855503, guid: e2d578e80671cf745a2560d306aa1271, type: 3}
 --- !u!1001 &1643661045
@@ -9762,7 +9739,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &2075544366
@@ -9988,6 +9965,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ataque: {fileID: 3161860528703980097, guid: 3b13288bc861b9b4c93b74733ffd52eb, type: 3}
   flag: 0
+  inputReader: {fileID: 0}
+  dialogController: {fileID: 0}
 --- !u!61 &2103774911
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10116,11 +10095,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4465f76000a9004eb50630ba1e4a350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signalImage1: {fileID: 2050156160}
-  signalImage2: {fileID: 1184199354}
-  signalImage3: {fileID: 1474019147}
-  SprSignalOn: {fileID: -7221141562761245361, guid: 949cf892448d63843b21e3b1946a3b54, type: 3}
-  SprSignalOff: {fileID: -1706673280111543478, guid: 522ceb8c53274da47bf04c9ba6eac92c, type: 3}
+  signalImages: []
+  signalSpritesLevel0: []
+  signalSpritesLevel1: []
+  signalSpritesLevel2: []
+  signalSpritesLevel3: []
 --- !u!114 &2125258101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10329,7 +10308,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &2138811285

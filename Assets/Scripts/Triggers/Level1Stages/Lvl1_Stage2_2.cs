@@ -4,9 +4,8 @@ public class Level1Stage2_2 : StageController
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (TriggerStage(other))
         {
-            TriggerStage(other);
 
             string[] dialog = new string[]
             {

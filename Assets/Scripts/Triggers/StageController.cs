@@ -19,7 +19,7 @@ public class StageController : MonoBehaviour
     public InputReader inputReader;
     public DialogController dialogController;
 
-    private bool triggered = false;
+    public bool triggered = false;
 
     protected virtual void Awake()
     {
@@ -31,13 +31,16 @@ public class StageController : MonoBehaviour
             dialogController = FindAnyObjectByType<DialogController>();
     }
 
-    protected void TriggerStage(Collider2D other)
+    protected bool TriggerStage(Collider2D other)
     {
         if (other.CompareTag("Player") && !triggered)
         {
             triggered = true;
             inputReader?.DisableInput();
+
+            return true;
         }
+        return false;
     }
 
     protected void StartDialog(string[] lines, float[] times, System.Action onComplete = null)
