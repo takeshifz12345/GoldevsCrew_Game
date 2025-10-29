@@ -14,7 +14,7 @@ public class Level1Stage3 : MonoBehaviour
             if (!flag)
             {
                 inputReader.DisableInput();
-                dialogController.Enable();
+                dialogController.Enable(0);
                 Dialogo1();
                 Invoke(nameof(Dialogo2), 3f);
                 Invoke(nameof(Dialogo3), 5f);

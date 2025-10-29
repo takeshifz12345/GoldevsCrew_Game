@@ -17,7 +17,7 @@ public class DialogStage2 : MonoBehaviour
             inputReader.DisableInput();
 
             // Iniciar el diálogo
-            dialogController.Enable();
+            dialogController.Enable(0);
             Dialogo1();
 
             Invoke(nameof(Dialogo2), 5f);

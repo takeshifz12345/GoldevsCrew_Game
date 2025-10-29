@@ -36,7 +36,7 @@ public class BossBattle1 : MonoBehaviour
             flag = true;
 
             inputReader.DisableInput();
-            dialogController.Enable();
+            dialogController.Enable(0);
             Dialogo1();
             Invoke(nameof(Dialogo2), 5f);
             Invoke(nameof(Dialogo3), 7f);

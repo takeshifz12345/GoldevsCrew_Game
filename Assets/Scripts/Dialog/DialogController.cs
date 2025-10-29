@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class DialogController : MonoBehaviour
 {
+    public Sprite[] sprite;
+
     [Header("Referencias del diálogo")]
     [SerializeField] private TextMeshProUGUI dialogText;
     [SerializeField] private Image dialogImage;
@@ -17,18 +19,18 @@ public class DialogController : MonoBehaviour
         dialogProfile ??= GameObject.Find("DialogProfile")?.GetComponent<Image>();
 
         // Desactiva ambos al inicio
-        SetActive(false);
+        SetActive(false, 0);
     }
 
     /// <summary>
     /// Activa el diálogo
     /// </summary>
-    public void Enable() => SetActive(true);
+    public void Enable(int sprite) => SetActive(true, sprite);
 
     /// <summary>
     /// Desactiva el diálogo
     /// </summary>
-    public void Disable() => SetActive(false);
+    public void Disable() => SetActive(false, 0);
 
     /// <summary>
     /// Cambia el texto del diálogo
@@ -44,10 +46,12 @@ public class DialogController : MonoBehaviour
     /// <summary>
     /// Activa o desactiva ambos elementos
     /// </summary>
-    private void SetActive(bool value)
+    private void SetActive(bool value, int spriteValue)
     {
         if (dialogText != null) dialogText.gameObject.SetActive(value);
         if (dialogImage != null) dialogImage.gameObject.SetActive(value);
         if (dialogProfile != null) dialogProfile.gameObject.SetActive(value);
+
+        dialogProfile.sprite = sprite[spriteValue];
     }
 }

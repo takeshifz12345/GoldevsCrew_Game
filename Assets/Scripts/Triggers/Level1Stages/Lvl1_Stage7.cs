@@ -117,16 +117,21 @@ public class Lvl1_Stage7 : StageController
             if (ataqueDownCoroutine != null) StopCoroutine(ataqueDownCoroutine);
             if (ataqueLeftCoroutine != null) StopCoroutine(ataqueLeftCoroutine);
 
-            canvas.SetActive(false);
-            ojo1.SetOpen(false);
-            ojo2.SetOpen(false);
-            ojo3.SetOpen(false);
-            zona1.Enable();
-            zona2.Enable();
-            zona3.Enable();
-            wall.SetActive(false);
+            desactivar();
 
             Destroy(this);
         }
+    }
+
+    public void desactivar()
+    {
+        canvas.SetActive(false);
+        ojo1.SetOpen(false);
+        ojo2.SetOpen(false);
+        ojo3.SetOpen(false);
+        zona1.Enable();
+        zona2.Enable();
+        zona3.Enable();
+        wall.SetActive(false);
     }
 }

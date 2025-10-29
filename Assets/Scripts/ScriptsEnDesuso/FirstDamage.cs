@@ -20,7 +20,7 @@ public class FirstDamage : MonoBehaviour
                 inputReader.DisableInput();
 
                 // Iniciar el diálogo
-                dialogController.Enable();
+                dialogController.Enable(0);
                 
                 Vector2 posSpawn = new Vector2(posX, posY);
                 Instantiate(ataque, posSpawn, Quaternion.identity);

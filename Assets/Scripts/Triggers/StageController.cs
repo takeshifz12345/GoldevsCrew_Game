@@ -18,6 +18,7 @@ public class StageController : MonoBehaviour
     [Header("Referencias")]
     public InputReader inputReader;
     public DialogController dialogController;
+    public int spriteDialog;
 
     public bool triggered = false;
 
@@ -50,7 +51,7 @@ public class StageController : MonoBehaviour
 
     private IEnumerator DialogRoutine(string[] lines, float[] times, System.Action onComplete)
     {
-        dialogController?.Enable();
+        dialogController?.Enable(spriteDialog);
 
         for (int i = 0; i < lines.Length; i++)
         {

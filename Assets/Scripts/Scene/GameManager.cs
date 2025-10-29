@@ -5,9 +5,10 @@ public class GameManager : MonoBehaviour
 {
     public Camera cam1;
     public Button button;
-    public GameObject punto3;
-    public GameObject punto4;
-    public GameObject punto7;
+    public GameObject spawnPoint1;
+    public GameObject spawnTrigger1;
+    public GameObject spawnPoint2;
+    public GameObject spawnTrigger2;
     public Camera cam3;
     public Camera cam4;
     public GameObject jugador;
@@ -21,24 +22,23 @@ public class GameManager : MonoBehaviour
 
     private void Reiniciar()
     {
-        if (punto4.GetComponent<Lvl1_Stage4>().triggered)
+        if (spawnTrigger2.GetComponent<Lvl1_Stage7>().triggered)
         {
-            jugador.transform.position = punto3.transform.position;
-            punto4.GetComponent<Lvl1_Stage4>().triggered = false;
-            cam3.GetComponent<CameraTrigger>().ActivateThisCamera();
-            punto4.GetComponent<Lvl1_Stage4>().enemigo.GetComponent<EnemyStatus>().currentHealth = punto4.GetComponent<Lvl1_Stage4>().enemigo.GetComponent<EnemyStatus>().maxHealth;
-            punto4.GetComponent<Lvl1_Stage4>().TerminarStage();
+            spawnTrigger2.GetComponent<Lvl1_Stage7>().triggered = false;
+            jugador.transform.position = spawnPoint2.transform.position;
+            cam4.GetComponent<CameraTrigger>().ActivateThisCamera();
+            spawnTrigger2.GetComponent<Lvl1_Stage7>().enemigo.GetComponent<EnemyStatus>().currentHealth = spawnTrigger2.GetComponent<Lvl1_Stage7>().enemigo.GetComponent<EnemyStatus>().maxHealth;
+            spawnTrigger2.GetComponent<Lvl1_Stage7>().desactivar();
         }
-        //else
-        //{
-        //    if (punto7.GetComponent<BossBattle1>().flag)
-        //    {
-        //        punto7.GetComponent<BossBattle1>().flag = false;
-        //        jugador.transform.position = punto4.transform.position;
-        //        cam4.GetComponent<CameraTrigger>().ActivateThisCamera();
-        //        punto7.GetComponent<BossBattle1>().enemigo.GetComponent<EnemyStatus>().currentHealth = punto7.GetComponent<BossBattle1>().enemigo.GetComponent<EnemyStatus>().maxHealth;
-        //    }
-        //}
+        else
+        {
+            jugador.transform.position = spawnPoint1.transform.position;
+            spawnTrigger1.GetComponent<Lvl1_Stage4>().triggered = false;
+            cam3.GetComponent<CameraTrigger>().ActivateThisCamera();
+            spawnTrigger1.GetComponent<Lvl1_Stage4>().enemigo.GetComponent<EnemyStatus>().currentHealth = spawnTrigger1.GetComponent<Lvl1_Stage4>().enemigo.GetComponent<EnemyStatus>().maxHealth;
+            spawnTrigger1.GetComponent<Lvl1_Stage4>().TerminarStage();
+        }
+
 
         jugador.GetComponent<PlayerHealth>().currentHealth = jugador.GetComponent<PlayerHealth>().maxHealth;
         jugador.GetComponent<PlayerHealth>().healCooldownTimer = 0;

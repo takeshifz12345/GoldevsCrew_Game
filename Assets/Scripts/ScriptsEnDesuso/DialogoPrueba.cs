@@ -8,7 +8,7 @@ public class DialogoPrueba : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            dialogController.Enable();
+            dialogController.Enable(0);
             dialogController.ChangeText("Hola, tonoto");
             Invoke(nameof(DisableDialog), 2f);
         }

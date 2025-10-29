@@ -33,7 +33,7 @@ public class Level1Stage4 : MonoBehaviour
         {
             flag = true;
             inputReader.DisableInput();
-            dialogController.Enable();
+            dialogController.Enable(0);
             Dialogo1();
             Invoke(nameof(Dialogo2), 3f);
             Invoke(nameof(Dialogo3), 5f);
