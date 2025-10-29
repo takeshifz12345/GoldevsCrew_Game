@@ -348,6 +348,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5599297089450727281, guid: b8764428a9d2a834fb0476391fe6f639, type: 3}
   m_PrefabInstance: {fileID: 1210139895}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &190530217 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2200091164177008551, guid: f5e8d55e8ab295445ae53262ca95d65c, type: 3}
+  m_PrefabInstance: {fileID: 9036901698541146679}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &198998962 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5599297089450727281, guid: b8764428a9d2a834fb0476391fe6f639, type: 3}
@@ -2407,11 +2412,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!20 &951737206 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 750920735444650431, guid: f5e8d55e8ab295445ae53262ca95d65c, type: 3}
-  m_PrefabInstance: {fileID: 9036901698541146679}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &960749800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4665,6 +4665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2061013980}
   - component: {fileID: 2061013981}
+  - component: {fileID: 2061013982}
   m_Layer: 0
   m_Name: EndLevel
   m_TagString: Untagged
@@ -4681,7 +4682,7 @@ Transform:
   m_GameObject: {fileID: 2061013979}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 130, y: 0, z: 0}
+  m_LocalPosition: {x: 129.74, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4733,6 +4734,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2061013982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061013979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4c0e929a0c2d74ebc71e08cf278f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2070435611 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1138750566932207706, guid: b8764428a9d2a834fb0476391fe6f639, type: 3}
@@ -5745,7 +5758,11 @@ PrefabInstance:
     - target: {fileID: 5222627980763971782, guid: ced34c159fcc81045a51bd8bfb4648f6, type: 3}
       propertyPath: cam4
       value: 
-      objectReference: {fileID: 951737206}
+      objectReference: {fileID: 190530217}
+    - target: {fileID: 5222627980763971782, guid: ced34c159fcc81045a51bd8bfb4648f6, type: 3}
+      propertyPath: cam6
+      value: 
+      objectReference: {fileID: 190530217}
     - target: {fileID: 5222627980763971782, guid: ced34c159fcc81045a51bd8bfb4648f6, type: 3}
       propertyPath: button
       value: 

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager1 : MonoBehaviour
 {
     public Camera cam1;
     public Button button;
@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject spawnPoint2;
     public GameObject spawnTrigger2;
     public Camera cam3;
-    public Camera cam4;
+    public Camera cam6;
     public GameObject jugador;
     public GameObject canvasGameOver;
 
@@ -22,11 +22,11 @@ public class GameManager : MonoBehaviour
 
     private void Reiniciar()
     {
-        if (spawnTrigger2.GetComponent<Lvl1_Stage7>().triggered)
+        if (spawnPoint1.GetComponent<Lvl1_Stage3>().triggered)
         {
             spawnTrigger2.GetComponent<Lvl1_Stage7>().triggered = false;
             jugador.transform.position = spawnPoint2.transform.position;
-            cam4.GetComponent<CameraTrigger>().ActivateThisCamera();
+            cam6.GetComponent<CameraTrigger>().ActivateThisCamera();
             spawnTrigger2.GetComponent<Lvl1_Stage7>().enemigo.GetComponent<EnemyStatus>().currentHealth = spawnTrigger2.GetComponent<Lvl1_Stage7>().enemigo.GetComponent<EnemyStatus>().maxHealth;
             spawnTrigger2.GetComponent<Lvl1_Stage7>().desactivar();
         }

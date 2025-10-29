@@ -33,13 +33,13 @@ public class Lvl1_Stage7 : StageController
         if (!TriggerStage(other)) return;
 
         string[] lines = {
-            "—Me duele ver tu rostro.",
-            "—Pero me duele aún más ya no poder hacerlo.",
-            "—¿En serio quieres verla de nuevo?",
-            "—¿A pesar de lo que pasó en el puente?",
-            "—...",
-            "—Lo siento.",
-            "—Ordenes son ordenes."
+            "ï¿½Me duele ver tu rostro.",
+            "ï¿½Pero me duele aï¿½n mï¿½s ya no poder hacerlo.",
+            "ï¿½ï¿½En serio quieres verla de nuevo?",
+            "ï¿½ï¿½A pesar de lo que pasï¿½ en el puente?",
+            "ï¿½...",
+            "ï¿½Lo siento.",
+            "ï¿½Ordenes son ordenes."
         };
 
         float[] times = { 2f, 2f, 2f, 2f, 1.5f, 1.5f, 2f };
@@ -114,9 +114,6 @@ public class Lvl1_Stage7 : StageController
     {
         if (enemigo == null)
         {
-            if (ataqueDownCoroutine != null) StopCoroutine(ataqueDownCoroutine);
-            if (ataqueLeftCoroutine != null) StopCoroutine(ataqueLeftCoroutine);
-
             desactivar();
 
             Destroy(this);
@@ -125,6 +122,9 @@ public class Lvl1_Stage7 : StageController
 
     public void desactivar()
     {
+        if (ataqueDownCoroutine != null) StopCoroutine(ataqueDownCoroutine);
+        if (ataqueLeftCoroutine != null) StopCoroutine(ataqueLeftCoroutine);
+            
         canvas.SetActive(false);
         ojo1.SetOpen(false);
         ojo2.SetOpen(false);
