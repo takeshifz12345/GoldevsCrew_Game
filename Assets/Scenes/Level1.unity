@@ -1307,10 +1307,10 @@ MonoBehaviour:
   spawnXADown: 111.5
   spawnXBDown: 125.5
   spawnYDown: 4
-  spawnYALeft: 0.5
+  spawnYALeft: -1
   spawnYBLeft: -1.5
   spawnXLeft: 125.5
-  intervaloAtaques: 1
+  intervaloAtaques: 3
   zona1: {fileID: 851329497}
   zona2: {fileID: 2116216683}
   zona3: {fileID: 549162052}

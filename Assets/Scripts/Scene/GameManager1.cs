@@ -22,7 +22,7 @@ public class GameManager1 : MonoBehaviour
 
     private void Reiniciar()
     {
-        if (spawnPoint1.GetComponent<Lvl1_Stage3>().triggered)
+        if (spawnPoint2.GetComponent<SimpleStage>().triggered)
         {
             spawnTrigger2.GetComponent<Lvl1_Stage7>().triggered = false;
             jugador.transform.position = spawnPoint2.transform.position;
