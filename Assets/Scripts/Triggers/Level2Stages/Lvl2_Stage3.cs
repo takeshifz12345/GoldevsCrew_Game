@@ -39,7 +39,7 @@ public class Lvl2_Stage3 : StageController
                 {
                     prefab = ataquePrefab,
                     position = (Vector2)transform.position + posicionesAtaques[i],
-                    direction = Vector2.up, // De abajo hacia arriba
+                    direction = Vector2.down, // De abajo hacia arriba
                     speed = velocidadAtaques,
                     damage = 1,
                     lifeTime = duracionAtaques,
