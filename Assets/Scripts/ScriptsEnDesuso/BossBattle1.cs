@@ -184,7 +184,7 @@ public class BossBattle1 : MonoBehaviour
         Inicio();
         canvas.SetActive(true);
 
-        enemigo.GetComponent<EnemyStatus>().active = true;
+        enemigo.GetComponent<EnemyStatus>().Active();
         enemigo.GetComponent<EnemyStatus>().TakeDamage(0);
 
         wall.SetActive(true);

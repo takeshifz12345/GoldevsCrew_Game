@@ -7,15 +7,14 @@ public class EnemyStatus : MonoBehaviour
     public int maxHealth = 10;
     public int currentHealth;
 
-    [SerializeField] private TextMeshProUGUI hpText;
+    public UIEnemyLife uIEnemyLife;
 
     [Header("Estado")]
-    public bool active = false;
+    private bool active = false;
 
     private void Awake()
     {
         currentHealth = maxHealth;
-        UpdateUI();
     }
 
     /// <summary>
@@ -39,12 +38,23 @@ public class EnemyStatus : MonoBehaviour
     /// </summary>
     private void UpdateUI()
     {
-        if (hpText != null)
-            hpText.text = currentHealth.ToString();
+        if (uIEnemyLife != null)
+            uIEnemyLife.UpdateLifeUI(currentHealth);
     }
 
     private void Die()
     {
         Destroy(gameObject);
+    }
+
+    public void Active()
+    {
+        active = true;
+        UpdateUI();
+    }
+
+    public void SetActive(bool value)
+    {
+        active = value;
     }
 }

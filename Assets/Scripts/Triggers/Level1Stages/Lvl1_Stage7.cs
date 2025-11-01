@@ -50,7 +50,7 @@ public class Lvl1_Stage7 : StageController
     private void FinalizarDialogo()
     {
         canvas.SetActive(true);
-        enemigo.GetComponent<EnemyStatus>().active = true;
+        enemigo.GetComponent<EnemyStatus>().Active();
         enemigo.GetComponent<EnemyStatus>().TakeDamage(0);
         wall.SetActive(true);
 
@@ -125,7 +125,6 @@ public class Lvl1_Stage7 : StageController
         if (ataqueDownCoroutine != null) StopCoroutine(ataqueDownCoroutine);
         if (ataqueLeftCoroutine != null) StopCoroutine(ataqueLeftCoroutine);
             
-        canvas.SetActive(false);
         ojo1.SetOpen(false);
         ojo2.SetOpen(false);
         ojo3.SetOpen(false);

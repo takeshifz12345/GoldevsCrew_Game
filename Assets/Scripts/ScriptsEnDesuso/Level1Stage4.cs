@@ -77,7 +77,7 @@ public class Level1Stage4 : MonoBehaviour
 
         canvas.SetActive(true);
 
-        enemigo.GetComponent<EnemyStatus>().active = true;
+        enemigo.GetComponent<EnemyStatus>().Active();
     }
 
     private void Inicio()

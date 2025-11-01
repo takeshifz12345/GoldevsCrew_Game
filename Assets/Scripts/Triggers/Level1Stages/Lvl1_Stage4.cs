@@ -37,7 +37,7 @@ public class Lvl1_Stage4 : StageController
         StartDialog(lines, times, () =>
         {
             canvas.SetActive(true);
-            enemigo.GetComponent<EnemyStatus>().active = true;
+            enemigo.GetComponent<EnemyStatus>().Active();
             ataqueLoop = StartCoroutine(LanzarAtaquesInfinitos());
         });
     }
@@ -84,8 +84,6 @@ public class Lvl1_Stage4 : StageController
     {
         if (ataqueLoop != null)
             StopCoroutine(ataqueLoop);
-
-        canvas.SetActive(false);
 
         ojo1.SetOpen(false);
         ojo2.SetOpen(false);

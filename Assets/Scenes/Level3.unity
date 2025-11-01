@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (11)
+      value: SignalZone5_4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -320,7 +320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone
+      value: SignalZone1_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -459,7 +459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (15)
+      value: SignalZone7_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -634,7 +634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone3
+      value: SignalZone1_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -708,7 +708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (8)
+      value: SignalZone5_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -782,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (7)
+      value: SignalZone4_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -856,7 +856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (5)
+      value: SignalZone4_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -930,7 +930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone4
+      value: SignalZone2_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1057,7 +1057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5
+      value: SignalZone2_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1301,7 +1301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone2
+      value: SignalZone1_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1432,7 +1432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone6
+      value: SignalZone2_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1506,7 +1506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (16)
+      value: SignalZone7_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1580,7 +1580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (13)
+      value: SignalZone6_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1654,7 +1654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (1)
+      value: SignalZone3_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1882,7 +1882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (10)
+      value: SignalZone5_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1956,7 +1956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (9)
+      value: SignalZone5_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2019,6 +2019,10 @@ PrefabInstance:
     - target: {fileID: 4575245299205845118, guid: 86e22e5a6939ba94ab1123127a4c56e6, type: 3}
       propertyPath: m_Name
       value: Etapas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4575245299205845118, guid: 86e22e5a6939ba94ab1123127a4c56e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4786759695676020224, guid: 86e22e5a6939ba94ab1123127a4c56e6, type: 3}
       propertyPath: m_Sprite
@@ -2103,7 +2107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561076305989252707, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 89.27
+      value: 89.32
       objectReference: {fileID: 0}
     - target: {fileID: 2561076305989252707, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2143,7 +2147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (12)
+      value: SignalZone6_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2274,7 +2278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (2)
+      value: SignalZone3_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2344,7 +2348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (4)
+      value: SignalZone3_4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2418,7 +2422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (3)
+      value: SignalZone3_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2492,7 +2496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (6)
+      value: SignalZone4_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2566,7 +2570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7214196123331569547, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
       propertyPath: m_Name
-      value: SignalZone5 (14)
+      value: SignalZone6_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
