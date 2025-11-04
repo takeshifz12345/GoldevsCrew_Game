@@ -10,9 +10,9 @@ public class Lvl2_Stage7 : StageController
     public float spawnYDown;
 
     [Header("Spawns Izquierda")]
-    public float spawnYALeft;
-    public float spawnYBLeft;
-    public float spawnXLeft;
+    public float spawnYARight;
+    public float spawnYBRight;
+    public float spawnXRight;
 
     public float intervaloAtaques = 1f;
 
@@ -74,12 +74,12 @@ public class Lvl2_Stage7 : StageController
     {
         while (enemigo != null)
         {
-            float spawnY = Random.Range(spawnYALeft, spawnYBLeft);
-            Vector2 posSpawn = new(spawnXLeft, spawnY);
+            float spawnY = Random.Range(spawnYARight, spawnYBRight);
+            Vector2 posSpawn = new(spawnXRight, spawnY);
 
             GameObject ataqueGO = Instantiate(ataques2, posSpawn, Quaternion.identity);
             EnemyAttack ea = ataqueGO.GetComponent<EnemyAttack>();
-            ea.direction = Vector2.left;
+            ea.direction = Vector2.right;
             ea.speed = 5f;
             ea.damage = 1;
             ea.lifeTime = 30f;
