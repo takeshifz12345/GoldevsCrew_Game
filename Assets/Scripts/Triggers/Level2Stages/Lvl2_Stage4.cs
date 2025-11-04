@@ -25,7 +25,9 @@ public class Lvl2_Stage4 : StageController
         if (!TriggerStage(other)) return;
 
         string[] lines = {
-            "uwu"
+            "—No vengas.",
+            "—Te odio.",
+            "—No te quiero ver."
         };
 
         float[] times = { 3f, 2f, 3f, 4f, 5f };

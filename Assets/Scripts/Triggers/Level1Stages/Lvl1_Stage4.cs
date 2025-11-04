@@ -29,7 +29,7 @@ public class Lvl1_Stage4 : StageController
             "—Lo siento.",
             "—Pero son órdenes.",
             "PRESIONA LA TECLA E PARA DISPARAR.",
-            "PERO CUIDADO, PIERDES VIDA AL DISPARAR."
+            "PERO CUIDADO POR QUE PIERDES VIDA AL HACERLO."
         };
 
         float[] times = { 3f, 2f, 3f, 4f, 5f };

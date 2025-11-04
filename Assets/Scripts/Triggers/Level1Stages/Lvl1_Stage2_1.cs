@@ -13,7 +13,9 @@ public class Level1Stage2_1 : StageController
             string[] dialog = new string[]
             {
             "—Por si acaso, no pude quitar el desastre que tú y tu amiga hicieron en la pared.",
-            "—Jester se quedó sin pintura amarilla.",
+            "—El almacén de pintura de Jester se quedó vacío.",
+            "—No salgas de esta habitación.",
+            "—…",
             "—No salgas de esta habitación.",
             "—Te estaré viendo."
             };

@@ -10,7 +10,7 @@ public class Level1Stage2_2 : StageController
             string[] dialog = new string[]
             {
             "PARA SALTAR PULSE ESPACIO O LA TECLA W.",
-            "PARA CURARSE PRESIONA LA TECLA Q.",
+            "PARA CURARSE PRESIONA LA TECLA Q..",
             "LA VIDA CURADA DEPENDE DE LA SEÑAL QUE SE TENGA.",
             "—Te estaré viendo."
             };

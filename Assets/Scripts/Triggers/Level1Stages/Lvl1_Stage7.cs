@@ -33,13 +33,13 @@ public class Lvl1_Stage7 : StageController
         if (!TriggerStage(other)) return;
 
         string[] lines = {
-            "�Me duele ver tu rostro.",
-            "�Pero me duele a�n m�s ya no poder hacerlo.",
-            "��En serio quieres verla de nuevo?",
-            "��A pesar de lo que pas� en el puente?",
-            "�...",
-            "�Lo siento.",
-            "�Ordenes son ordenes."
+            "—Me duele ver tu rostro.",
+            "—Pero me duele aún más ya no poder hacerlo.",
+            "—¿En serio quieres ver a tu amiga de nuevo?",
+            "—¿A pesar de lo que pasó en la muralla?",
+            "—...",
+            "—Lo siento.",
+            "—Ordenes son órdenes."
         };
 
         float[] times = { 2f, 2f, 2f, 2f, 1.5f, 1.5f, 2f };

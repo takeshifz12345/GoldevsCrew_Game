@@ -33,7 +33,9 @@ public class Lvl2_Stage7 : StageController
         if (!TriggerStage(other)) return;
 
         string[] lines = {
-            "uwu"
+            "—Eres genial, Jester.",
+            "—Sí, y divertido.",
+            "—Lo siento. Pero solo sigo órdenes del rey."
         };
 
         float[] times = { 2f, 2f, 2f, 2f, 1.5f, 1.5f, 2f };

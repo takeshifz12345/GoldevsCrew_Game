@@ -25,7 +25,7 @@ public class Lvl2_Stage3 : StageController
             string[] dialog = new string[]
             {
                 "—Ya lo sé.",
-                "—Quieres ver las estrellas en el puente ¿cierto?",
+                "—Quieres ver las estrellas en la muralla ¿cierto?",
                 "—No necesitas salir, ya me encargué de eso."
             };
 

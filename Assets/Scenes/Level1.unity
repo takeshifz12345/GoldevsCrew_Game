@@ -286,6 +286,7 @@ MonoBehaviour:
   triggered: 0
   lines:
   - "\u2014Tu habitaci\xF3n est\xE1 en la direcci\xF3n contraria."
+  - "\u2014\xBFlo sabes?"
   delayBetweenLines: 3
 --- !u!61 &54702395
 BoxCollider2D:
