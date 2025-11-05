@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,6 @@ public class GameManager1 : MonoBehaviour
     {
         cam1.enabled = true;
         button.onClick.AddListener(Reiniciar);
-        Debug.Log("0");
     }
 
     private void Update()
@@ -32,35 +32,34 @@ public class GameManager1 : MonoBehaviour
 
     private void Reiniciar()
     {
-        Debug.Log("1");
         switch (level)
         {
             case 1:
-                Debug.Log("2");
-                if (spawnPoint2.GetComponent<SimpleStage>().triggered)
+                if (spawnPoint2.GetComponent<StageController>().triggered)
                 {
-                    Debug.Log("3");
                     spawnTrigger2.GetComponent<Lvl1_Stage7>().triggered = false;
                     jugador.transform.position = spawnPoint2.transform.position;
                     cam6.GetComponent<CameraTrigger>().ActivateThisCamera();
                     spawnTrigger2.GetComponent<Lvl1_Stage7>().enemigo.GetComponent<EnemyStatus>().currentHealth = spawnTrigger2.GetComponent<Lvl1_Stage7>().enemigo.GetComponent<EnemyStatus>().maxHealth;
                     spawnTrigger2.GetComponent<Lvl1_Stage7>().desactivar();
                 }
-                else
+                else if (spawnPoint1.GetComponent<StageController>().triggered)
                 {
-                    Debug.Log("4");
                     jugador.transform.position = spawnPoint1.transform.position;
-                    spawnTrigger1.GetComponent<Lvl1_Stage4>().triggered = false;
+                    spawnTrigger1.GetComponent<StageController>().triggered = false;
                     cam3.GetComponent<CameraTrigger>().ActivateThisCamera();
                     spawnTrigger1.GetComponent<Lvl1_Stage4>().enemigo.GetComponent<EnemyStatus>().currentHealth = spawnTrigger1.GetComponent<Lvl1_Stage4>().enemigo.GetComponent<EnemyStatus>().maxHealth;
                     spawnTrigger1.GetComponent<Lvl1_Stage4>().TerminarStage();
                 }
+                else
+                {
+                    jugador.transform.position = new Vector3(0f, 0f, 0f);
+                    cam1.GetComponent<CameraTrigger>().ActivateThisCamera();
+                }
                 break;
             case 2:
-                Debug.Log("4");
-                if (spawnPoint2.GetComponent<SimpleStage>().triggered)
+                if (spawnPoint2.GetComponent<StageController>().triggered)
                 {
-                    Debug.Log("5");
                     spawnTrigger2.GetComponent<Lvl2_Stage7>().triggered = false;
                     jugador.transform.position = spawnPoint2.transform.position;
                     cam6.GetComponent<CameraTrigger>().ActivateThisCamera();
@@ -69,7 +68,6 @@ public class GameManager1 : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("6");
                     jugador.transform.position = spawnPoint1.transform.position;
                     spawnTrigger1.GetComponent<Lvl2_Stage4>().triggered = false;
                     cam3.GetComponent<CameraTrigger>().ActivateThisCamera();
@@ -79,7 +77,6 @@ public class GameManager1 : MonoBehaviour
                 break;
         }
 
-        Debug.Log("7");
         jugador.GetComponent<PlayerHealth>().currentHealth = jugador.GetComponent<PlayerHealth>().maxHealth;
         jugador.GetComponent<PlayerHealth>().healCooldownTimer = 0;
 

@@ -10,12 +10,12 @@ public class Level1Stage2_2 : StageController
             string[] dialog = new string[]
             {
             "PARA SALTAR PULSE ESPACIO O LA TECLA W.",
-            "PARA CURARSE PRESIONA LA TECLA Q..",
+            "PARA CURARSE PRESIONA LA TECLA Q.",
             "LA VIDA CURADA DEPENDE DE LA SEÑAL QUE SE TENGA.",
             "—Te estaré viendo."
             };
 
-            float[] tiempos = new float[] { 5f, 2f, 2f, 3f };
+            float[] tiempos = new float[] { 3f, 2f, 4f, 1f };
 
             StartDialog(dialog, tiempos);
         }

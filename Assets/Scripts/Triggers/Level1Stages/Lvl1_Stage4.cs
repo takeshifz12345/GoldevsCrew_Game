@@ -32,7 +32,7 @@ public class Lvl1_Stage4 : StageController
             "PERO CUIDADO POR QUE PIERDES VIDA AL HACERLO."
         };
 
-        float[] times = { 3f, 2f, 3f, 4f, 5f };
+        float[] times = { 2f, 2f, 1f, 2f, 3f };
 
         StartDialog(lines, times, () =>
         {

@@ -14,13 +14,12 @@ public class Level1Stage2_1 : StageController
             {
             "—Por si acaso, no pude quitar el desastre que tú y tu amiga hicieron en la pared.",
             "—El almacén de pintura de Jester se quedó vacío.",
-            "—No salgas de esta habitación.",
             "—…",
             "—No salgas de esta habitación.",
             "—Te estaré viendo."
             };
 
-            float[] tiempos = new float[] { 5f, 2f, 2f, 3f };
+            float[] tiempos = new float[] { 7f, 4f, 3f, 2f, 1f };
 
             AttackData[] attacks = new AttackData[]
             {

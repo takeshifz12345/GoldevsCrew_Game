@@ -2548,6 +2548,10 @@ PrefabInstance:
       propertyPath: player
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4378565426353382020, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b7faf783595b587448a06460439b7f45, type: 2}
     - target: {fileID: 4416719203842283108, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
       propertyPath: canHeal
       value: 0

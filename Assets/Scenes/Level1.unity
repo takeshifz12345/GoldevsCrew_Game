@@ -287,7 +287,9 @@ MonoBehaviour:
   lines:
   - "\u2014Tu habitaci\xF3n est\xE1 en la direcci\xF3n contraria."
   - "\u2014\xBFlo sabes?"
-  delayBetweenLines: 3
+  delayBetweenLines:
+  - 4
+  - 1
 --- !u!61 &54702395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4629,7 +4631,9 @@ MonoBehaviour:
   lines:
   - "\u2014Fue mi culpa por apartar la mirada de ti esa noche.\r"
   - "\u2014Conf\xEDo en que ser\xE1s una buena chica y me har\xE1s las cosas f\xE1ciles.\r"
-  delayBetweenLines: 4
+  delayBetweenLines:
+  - 4
+  - 7
 --- !u!61 &2075593296
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4981,7 +4985,8 @@ MonoBehaviour:
   triggered: 0
   lines:
   - "\u2014Se ve\xEDan tan felices juntas, pero..."
-  delayBetweenLines: 3
+  delayBetweenLines:
+  - 3
 --- !u!61 &2146583694
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5919,11 +5924,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8572824402930502657, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8572824402930502657, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8572824402930502657, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
       propertyPath: m_LocalPosition.z

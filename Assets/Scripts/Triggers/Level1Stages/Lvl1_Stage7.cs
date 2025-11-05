@@ -42,7 +42,7 @@ public class Lvl1_Stage7 : StageController
             "—Ordenes son órdenes."
         };
 
-        float[] times = { 2f, 2f, 2f, 2f, 1.5f, 1.5f, 2f };
+        float[] times = { 2f, 4f, 4f, 4f, 2f, 1f, 1f };
 
         StartDialog(lines, times, FinalizarDialogo);
     }

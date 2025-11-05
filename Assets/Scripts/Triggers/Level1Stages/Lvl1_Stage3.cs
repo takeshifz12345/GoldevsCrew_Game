@@ -26,7 +26,7 @@ public class Lvl1_Stage3 : StageController
             };
 
             // Duraciones de cada línea (segundos)
-            float[] tiempos = new float[] { 3f, 2f, 3f, 2f };
+            float[] tiempos = new float[] { 3f, 1f, 2f, 1f };
 
             // Datos de los tres ataques
             AttackData[] ataques = new AttackData[]
