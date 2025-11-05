@@ -54,6 +54,8 @@ public class Lvl1_Stage4 : StageController
                     float spawnX = Random.Range(spawnXA, spawnXB);
                     Vector2 spawnPos = new(spawnX, spawnY);
                     Instantiate(ataques, spawnPos, Quaternion.identity);
+                    if (enemigo == null)
+                        yield break;
                 }
                 yield return new WaitForSeconds(intervaloAtaques);
             }

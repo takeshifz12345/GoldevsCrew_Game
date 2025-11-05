@@ -49,7 +49,7 @@ public class StageController : MonoBehaviour
         StartCoroutine(DialogRoutine(lines, times, onComplete));
     }
 
-    private IEnumerator DialogRoutine(string[] lines, float[] times, System.Action onComplete)
+    public virtual IEnumerator DialogRoutine(string[] lines, float[] times, System.Action onComplete)
     {
         dialogController?.Enable(spriteDialog);
 

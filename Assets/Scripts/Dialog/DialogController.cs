@@ -54,4 +54,12 @@ public class DialogController : MonoBehaviour
 
         dialogProfile.sprite = sprite[spriteValue];
     }
+
+    public void ChangeProfile(int spriteValue)
+    {
+        if (dialogProfile != null)
+            dialogProfile.sprite = sprite[spriteValue];
+        else
+            Debug.LogWarning("DialogController: No hay Image asignado para el perfil.");
+    }
 }

@@ -442,7 +442,7 @@ MonoBehaviour:
   dialogController: {fileID: 1837184457}
   spriteDialog: 0
   triggered: 0
-  ataquePrefab: {fileID: 3161860528703980097, guid: 3b13288bc861b9b4c93b74733ffd52eb, type: 3}
+  ataquePrefab: {fileID: 3161860528703980097, guid: ec6ec3a9dea5be94b9576ae92cd0416a, type: 3}
   posicionesAtaques:
   - {x: 1, y: 3}
   - {x: 0, y: 3}
@@ -659,7 +659,11 @@ MonoBehaviour:
   - "\u2014Las estrellas en el cielo."
   - "\u2014He hecho todos los retratos del castillo."
   - "\u2014Pero esto es lo mejor que he hecho."
-  delayBetweenLines: 2
+  delayBetweenLines:
+  - 1
+  - 2
+  - 3
+  - 3
 --- !u!1001 &292106225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -953,7 +957,10 @@ MonoBehaviour:
   - "\u2014A Jester le ordenaron mantenerte adentro."
   - "\u2014Pero vete si quieres."
   - "\u2014Jester no te detendr\xE1."
-  delayBetweenLines: 2
+  delayBetweenLines:
+  - 2
+  - 1
+  - 1
 --- !u!61 &407317353
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1108,7 +1115,8 @@ MonoBehaviour:
   triggered: 0
   lines:
   - "\u2014\xBFNo te quedar\xE1s a ver estas estrellas?"
-  delayBetweenLines: 2
+  delayBetweenLines:
+  - 3
 --- !u!61 &470451140
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1250,7 +1258,7 @@ MonoBehaviour:
   dialogController: {fileID: 1837184457}
   spriteDialog: 1
   triggered: 0
-  ataques: {fileID: 3161860528703980097, guid: 41f61842ca06c144a97b074f03077d52, type: 3}
+  ataques: {fileID: 3161860528703980097, guid: 20f661ecad4814e44b44d66209ca5319, type: 3}
   spawnXA: -50
   spawnXB: -65
   spawnY: 4
@@ -2340,7 +2348,8 @@ MonoBehaviour:
   triggered: 0
   lines:
   - "\u2014Como sea, solo entra. S\xE9 que no te detendr\xE9."
-  delayBetweenLines: 2
+  delayBetweenLines:
+  - 4
 --- !u!61 &1034679515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3447,7 +3456,8 @@ MonoBehaviour:
   triggered: 0
   lines:
   - "\u2014Ser\xE1 divertido."
-  delayBetweenLines: 2
+  delayBetweenLines:
+  - 1
 --- !u!61 &1281575140
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3678,7 +3688,8 @@ MonoBehaviour:
   triggered: 0
   lines:
   - "\u2014Si te quedas te dejar\xE9 pintar todas las paredes, siempre me sobra pintura."
-  delayBetweenLines: 2
+  delayBetweenLines:
+  - 5
 --- !u!1001 &1334656243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4680,7 +4691,7 @@ MonoBehaviour:
   dialogController: {fileID: 1837184457}
   spriteDialog: 2
   triggered: 0
-  ataques2: {fileID: 3161860528703980097, guid: 3b13288bc861b9b4c93b74733ffd52eb, type: 3}
+  ataques2: {fileID: 3161860528703980097, guid: ec6ec3a9dea5be94b9576ae92cd0416a, type: 3}
   spawnXADown: -124
   spawnXBDown: -109
   spawnYDown: 4
@@ -4969,7 +4980,9 @@ MonoBehaviour:
   lines:
   - "\u2014Este es el almac\xE9n de pintura del gran Jester."
   - "\u2014Lo que significa que no es tu habitaci\xF3n."
-  delayBetweenLines: 2
+  delayBetweenLines:
+  - 4
+  - 4
 --- !u!1 &1676301751
 GameObject:
   m_ObjectHideFlags: 0

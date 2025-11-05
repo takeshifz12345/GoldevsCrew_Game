@@ -42,6 +42,12 @@ public class EnemyStatus : MonoBehaviour
             uIEnemyLife.UpdateLifeUI(currentHealth);
     }
 
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        UpdateUI();
+    }
+
     private void Die()
     {
         Destroy(gameObject);

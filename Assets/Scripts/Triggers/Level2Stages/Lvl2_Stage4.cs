@@ -30,7 +30,7 @@ public class Lvl2_Stage4 : StageController
             "—No te quiero ver."
         };
 
-        float[] times = { 3f, 2f, 3f, 4f, 5f };
+        float[] times = { 1f, 1f, 1f };
 
         StartDialog(lines, times, () =>
         {
@@ -52,6 +52,8 @@ public class Lvl2_Stage4 : StageController
                     float spawnX = Random.Range(spawnXA, spawnXB);
                     Vector2 spawnPos = new(spawnX, spawnY);
                     Instantiate(ataques, spawnPos, Quaternion.identity);
+                    if (enemigo == null)
+                        yield break;
                 }
                 yield return new WaitForSeconds(intervaloAtaques);
             }

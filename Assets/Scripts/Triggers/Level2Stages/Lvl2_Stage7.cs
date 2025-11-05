@@ -38,9 +38,25 @@ public class Lvl2_Stage7 : StageController
             "—Lo siento. Pero solo sigo órdenes del rey."
         };
 
-        float[] times = { 2f, 2f, 2f, 2f, 1.5f, 1.5f, 2f };
+        float[] times = { 1.5f, 1.5f, 3f };
 
         StartDialog(lines, times, FinalizarDialogo);
+    }
+
+    public override IEnumerator DialogRoutine(string[] lines, float[] times, System.Action onComplete)
+    {
+        dialogController?.Enable(spriteDialog);
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            dialogController.ChangeProfile(i);
+            dialogController?.ChangeText(lines[i]);
+            yield return new WaitForSeconds(times[i]);
+        }
+
+        dialogController?.Disable();
+        inputReader?.EnableInput();
+        onComplete?.Invoke();
     }
 
     private void FinalizarDialogo()

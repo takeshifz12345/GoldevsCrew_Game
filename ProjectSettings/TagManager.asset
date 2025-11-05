@@ -9,6 +9,7 @@ TagManager:
   - EnemyAttack
   - PlayerShoot
   - Receptor
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -29,7 +29,7 @@ public class Lvl2_Stage3 : StageController
                 "—No necesitas salir, ya me encargué de eso."
             };
 
-            float[] tiempos = new float[] { 2f, 3f, 3f };
+            float[] tiempos = new float[] { 1f, 3f, 3f };
 
             // Construcción dinámica de los ataques
             AttackData[] ataques = new AttackData[posicionesAtaques.Length];
