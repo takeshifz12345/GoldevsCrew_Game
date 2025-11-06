@@ -5272,6 +5272,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7039360348335275884, guid: 33725591f7d51f446918bb04443a91bb, type: 3}
+      propertyPath: 'signalSpritesLevel2.Array.data[2]'
+      value: 
+      objectReference: {fileID: -1448345595, guid: 8b581868d40ed004b9a93edba9879a2f, type: 3}
     - target: {fileID: 8267267985578560365, guid: 33725591f7d51f446918bb04443a91bb, type: 3}
       propertyPath: m_Name
       value: Canvas
