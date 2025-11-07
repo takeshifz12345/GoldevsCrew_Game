@@ -16,106 +16,129 @@ public class Level3_Trigger2 : MonoBehaviour
 
     public float spawnX_L1;
     public float spawnX_L2;
-    public float spawnX_L3;
 
     public float spawnX_R1;
     public float spawnX_R2;
-    public float spawnX_R3;
 
     public float intervaloAtaques;
 
     public bool triggered = false;
 
+    public bool attackDir = false;
+
+    public int cantidadAtaquesPorLado = 5;
+
+    private Coroutine cicloAtaquesCoroutine;
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!triggered)
+        if (!triggered && other.CompareTag("Player"))
         {
-            if (other.gameObject.CompareTag("Player"))
+            GameManager.ChangeJugador(true);
+            wall.SetActive(true);
+
+            triggered = true;
+
+            enemigo.GetComponent<EnemyStatus>().Active();
+            enemigo.GetComponent<EnemyStatus>().TakeDamage(0);
+
+            cicloAtaquesCoroutine = StartCoroutine(CicloAtaques());
+
+        }
+    }
+
+    private IEnumerator CicloAtaques()
+    {
+        while (enemigo != null)
+        {
+            // Ataques hacia la izquierda
+            attackDir = false;
+            for (int i = 0; i < cantidadAtaquesPorLado; i++)
             {
-                GameManager.ChangeJugador(true);
+                LanzarAtaqueIzquierdaArriba();
+                LanzarAtaqueIzquierdaNormal();
+                yield return new WaitForSeconds(intervaloAtaques);
+            }
 
-                wall.SetActive(true);
-
-                triggered = true;
-
-                enemigo.GetComponent<EnemyStatus>().Active();
-                enemigo.GetComponent<EnemyStatus>().TakeDamage(0);
-
-                ataqueDownCoroutine = StartCoroutine(LanzarAtaquesAbajo());
-                ataqueLeftCoroutine = StartCoroutine(LanzarAtaquesIzquierda());
+            // Ataques hacia la derecha
+            attackDir = true;
+            for (int i = 0; i < cantidadAtaquesPorLado; i++)
+            {
+                LanzarAtaqueDerechaArriba();
+                LanzarAtaqueDerechaNormal();
+                yield return new WaitForSeconds(intervaloAtaques);
             }
         }
     }
 
-    private IEnumerator LanzarAtaquesAbajoIzquierda()
+    private void LanzarAtaqueIzquierdaArriba()
     {
-        while (enemigo != null)
+        float spawnX = Random.Range(spawnX_L1, spawnX_L2);
+        Vector2 posSpawn = new(spawnX, spawnY_A);
+
+        GameObject ataqueGO = Instantiate(ataques1, posSpawn, Quaternion.identity);
+        EnemyAttack ea = ataqueGO.GetComponent<EnemyAttack>();
+        ea.direction = Vector2.down;
+        ea.speed = 5f;
+        ea.damage = 1;
+        ea.lifeTime = 6f;
+    }
+
+    private void LanzarAtaqueIzquierdaNormal()
+    {
+        float spawnY = Random.Range(spawnY_B, spawnY_C);
+        Vector2 posSpawn = new(spawnX_L2, spawnY);
+
+        GameObject ataqueGO = Instantiate(ataques1, posSpawn, Quaternion.identity);
+        EnemyAttack ea = ataqueGO.GetComponent<EnemyAttack>();
+        ea.direction = Vector2.left;
+        ea.speed = 5f;
+        ea.damage = 1;
+        ea.lifeTime = 30f;
+    }
+
+    private void LanzarAtaqueDerechaArriba()
+    {
+        float spawnX = Random.Range(spawnX_R1, spawnX_R2);
+        Vector2 posSpawn = new(spawnX, spawnY_A);
+
+        GameObject ataqueGO = Instantiate(ataques2, posSpawn, Quaternion.identity);
+        EnemyAttack ea = ataqueGO.GetComponent<EnemyAttack>();
+        ea.direction = Vector2.down;
+        ea.speed = 5f;
+        ea.damage = 1;
+        ea.lifeTime = 6f;
+    }
+
+    private void LanzarAtaqueDerechaNormal()
+    {
+        float spawnY = Random.Range(spawnY_B, spawnY_C);
+        Vector2 posSpawn = new(spawnX_R2, spawnY);
+
+        GameObject ataqueGO = Instantiate(ataques2, posSpawn, Quaternion.identity);
+        EnemyAttack ea = ataqueGO.GetComponent<EnemyAttack>();
+        ea.direction = Vector2.right;
+        ea.speed = 5f;
+        ea.damage = 1;
+        ea.lifeTime = 30f;
+    }
+
+    private void Update()
+    {
+        if (enemigo == null && triggered)
         {
-            float spawnX = Random.Range(spawnX_L1, spawnX_L2);
-            Vector2 posSpawn = new(spawnX, spawnY_A);
-
-            GameObject ataqueGO = Instantiate(ataques1, posSpawn, Quaternion.identity);
-            EnemyAttack ea = ataqueGO.GetComponent<EnemyAttack>();
-            ea.direction = Vector2.down;
-            ea.speed = 5f;
-            ea.damage = 1;
-            ea.lifeTime = 6f;
-
-            yield return new WaitForSeconds(intervaloAtaques);
+            Desactivar();
+            Destroy(this);
         }
     }
 
-    private IEnumerator LanzarAtaquesAbajoDerecha()
+    private void Desactivar()
     {
-        while (enemigo != null)
+        if (cicloAtaquesCoroutine != null)
         {
-            float spawnX = Random.Range(spawnX_R1, spawnX_R2);
-            Vector2 posSpawn = new(spawnX, spawnY_A);
-
-            GameObject ataqueGO = Instantiate(ataques1, posSpawn, Quaternion.identity);
-            EnemyAttack ea = ataqueGO.GetComponent<EnemyAttack>();
-            ea.direction = Vector2.down;
-            ea.speed = 5f;
-            ea.damage = 1;
-            ea.lifeTime = 6f;
-
-            yield return new WaitForSeconds(intervaloAtaques);
-        }
-    }
-
-    private IEnumerator LanzarAtaquesIzquierda()
-    {
-        while (enemigo != null)
-        {
-            float spawnY = Random.Range(spawnY_B, spawnY_C);
-            Vector2 posSpawn = new(spawnX_L3, spawnY);
-
-            GameObject ataqueGO = Instantiate(ataques2, posSpawn, Quaternion.identity);
-            EnemyAttack ea = ataqueGO.GetComponent<EnemyAttack>();
-            ea.direction = Vector2.left;
-            ea.speed = 5f;
-            ea.damage = 1;
-            ea.lifeTime = 30f;
-
-            yield return new WaitForSeconds(intervaloAtaques);
-        }
-    }
-
-    private IEnumerator LanzarAtaquesDerecha()
-    {
-        while (enemigo != null)
-        {
-            float spawnY = Random.Range(spawnY_B, spawnY_C);
-            Vector2 posSpawn = new(spawnX_R3, spawnY);
-
-            GameObject ataqueGO = Instantiate(ataques2, posSpawn, Quaternion.identity);
-            EnemyAttack ea = ataqueGO.GetComponent<EnemyAttack>();
-            ea.direction = Vector2.right;
-            ea.speed = 5f;
-            ea.damage = 1;
-            ea.lifeTime = 30f;
-
-            yield return new WaitForSeconds(intervaloAtaques);
+            StopCoroutine(cicloAtaquesCoroutine);
+            cicloAtaquesCoroutine = null;
         }
     }
 }
