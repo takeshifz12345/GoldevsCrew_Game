@@ -551,7 +551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1125212016308568029, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7443107893413732790, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
       propertyPath: dialogProfile
@@ -1298,6 +1298,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameManager: {fileID: 949657728}
   wall: {fileID: 376752859}
+  enemigo: {fileID: 0}
+  ataques1: {fileID: 0}
+  ataques2: {fileID: 0}
+  spawnY_A: 0
+  spawnY_B: 0
+  spawnY_C: 0
+  spawnX_L1: 0
+  spawnX_L2: 0
+  spawnX_L3: 0
+  spawnX_R1: 0
+  spawnX_R2: 0
+  spawnX_R3: 0
+  intervaloAtaques: 0
   triggered: 0
 --- !u!61 &841545470
 BoxCollider2D:
