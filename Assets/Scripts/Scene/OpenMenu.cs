@@ -4,11 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class OpenMenu : MonoBehaviour
 {
-    public Button boton; // Aquí arrastrarás tu botón desde el Inspector
+    public Button[] boton; // Aquí arrastrarás tu botón desde el Inspector
 
     void Start()
     {
-        boton.onClick.AddListener(GoToMenu);
+        for (int i = 0; i < boton.Length; i++)
+        {
+            boton[i].onClick.AddListener(GoToMenu);
+        }
     }
 
     public void GoToMenu()
