@@ -26,10 +26,7 @@ public class GameManager1 : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            Reiniciar();
-        }
+
     }
 
     private void Reiniciar()

@@ -29,7 +29,7 @@ public class Level3_Trigger2 : MonoBehaviour
     public int cantidadAtaquesPorLado = 5;
 
     private Coroutine cicloAtaquesCoroutine;
-
+    public MusicController music;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -43,8 +43,11 @@ public class Level3_Trigger2 : MonoBehaviour
             enemigo.GetComponent<EnemyStatus>().Active();
             enemigo.GetComponent<EnemyStatus>().TakeDamage(0);
 
-            cicloAtaquesCoroutine = StartCoroutine(CicloAtaques());
 
+            //music battle
+            music.PlayBattleMusic();
+
+            cicloAtaquesCoroutine = StartCoroutine(CicloAtaques());
         }
     }
 

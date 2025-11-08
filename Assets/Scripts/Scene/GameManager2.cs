@@ -70,6 +70,7 @@ public class GameManager2 : MonoBehaviour
     public IEnumerator DialogRoutine(string[] lines, float[] times, System.Action onComplete)
     {
         dialogController?.Enable(0);
+        inputReader?.DisableInput();
 
         for (int i = 0; i < lines.Length; i++)
         {

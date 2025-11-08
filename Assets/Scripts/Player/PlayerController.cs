@@ -25,24 +25,26 @@ public class PlayerController : MonoBehaviour
 
     public void Move(float dir)
     {
-        Debug.Log(Time.timeScale);
-        direction = (int)dir;
-
-        Vector2 currentVel = rb.linearVelocity;
-        rb.linearVelocity = new Vector2(dir * moveSpeed, currentVel.y);
-
-        bool isWalking = dir != 0;
-        animator.SetBool("isWalk", isWalking);
-
-        if (dir < 0)
+        if (rb != null)
         {
-            spriteRenderer.flipX = true;
-            ultDirection = -1;
-        }
-        else if (dir > 0)
-        {
-            spriteRenderer.flipX = false;
-            ultDirection = 1;
+            direction = (int)dir;
+
+            Vector2 currentVel = rb.linearVelocity;
+            rb.linearVelocity = new Vector2(dir * moveSpeed, currentVel.y);
+
+            bool isWalking = dir != 0;
+            animator.SetBool("isWalk", isWalking);
+
+            if (dir < 0)
+            {
+                spriteRenderer.flipX = true;
+                ultDirection = -1;
+            }
+            else if (dir > 0)
+            {
+                spriteRenderer.flipX = false;
+                ultDirection = 1;
+            }
         }
     }
 
