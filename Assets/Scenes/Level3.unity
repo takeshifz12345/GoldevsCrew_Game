@@ -543,7 +543,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 769627533060714440, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
       propertyPath: m_fontStyle
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1125212016308568029, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
       propertyPath: m_Name
@@ -553,9 +553,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2993374478941873602, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993374478941873602, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993374478941873602, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993374478941873602, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993374478941873602, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7417011643513975709, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
       propertyPath: m_PixelPerfect
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7417011643513975709, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7443107893413732790, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
       propertyPath: dialogProfile
@@ -563,12 +587,20 @@ PrefabInstance:
       objectReference: {fileID: 52567556}
     - target: {fileID: 7443107893413732790, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
       propertyPath: sprite.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7443107893413732790, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
       propertyPath: 'sprite.Array.data[0]'
       value: 
       objectReference: {fileID: -3105244199416787050, guid: bbeeea5ab2a69a94e81d9675e3d54331, type: 3}
+    - target: {fileID: 7443107893413732790, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
+      propertyPath: 'sprite.Array.data[1]'
+      value: 
+      objectReference: {fileID: -3105244199416787050, guid: bbeeea5ab2a69a94e81d9675e3d54331, type: 3}
+    - target: {fileID: 8539770051278323098, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8654801122384549190, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -902,6 +934,10 @@ PrefabInstance:
     - target: {fileID: 122514045388340078, guid: 27c6be63de385284a8d2657fb997e407, type: 3}
       propertyPath: m_Name
       value: GameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 9130158007375304614, guid: 27c6be63de385284a8d2657fb997e407, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9216352017584432982, guid: 27c6be63de385284a8d2657fb997e407, type: 3}
       propertyPath: m_Pivot.x
@@ -1277,6 +1313,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7570719575951962875, guid: 33725591f7d51f446918bb04443a91bb, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8267267985578560365, guid: 33725591f7d51f446918bb04443a91bb, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -1331,7 +1371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecd88e6964f91e48a86285639c1ccb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 949657728}
+  gameManager: {fileID: 949657728}
   wall: {fileID: 376752859}
   enemigo: {fileID: 255564640}
   ataques1: {fileID: 3161860528703980097, guid: 3b13288bc861b9b4c93b74733ffd52eb, type: 3}

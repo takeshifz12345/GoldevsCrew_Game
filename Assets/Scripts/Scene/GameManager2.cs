@@ -45,6 +45,7 @@ public class GameManager2 : MonoBehaviour
     {
         string[] dialog = new string[]
         {
+                "",
                 "Había una vez dos niñas que eran inseparables.",
                 "Les encantaba dibujar en las paredes, hablar por teléfonos de latas y mirar las estrellas desde la muralla.",
                 "Pero una noche… algo ocurrió.",
@@ -56,7 +57,7 @@ public class GameManager2 : MonoBehaviour
                 ""
         };
 
-        float[] tiempos = new float[] { 5f, 7.5f, 1.5f, 7.5f, 3.5f, 0.5f, 1f, 1.25f, 0.25f };
+        float[] tiempos = new float[] { 0.5f, 5f, 7.5f, 1.5f, 7.5f, 3.5f, 0.5f, 1f, 1.25f, 0.25f };
 
         StartDialog(dialog, tiempos, () => Empezar());
     }

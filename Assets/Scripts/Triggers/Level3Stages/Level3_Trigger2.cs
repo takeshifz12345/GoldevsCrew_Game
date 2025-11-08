@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Level3_Trigger2 : MonoBehaviour
 {
-    public GameManager2 GameManager;
+    public GameManager2 gameManager;
     public GameObject wall;
     public GameObject enemigo;
     public GameObject ataques1;
@@ -35,7 +35,7 @@ public class Level3_Trigger2 : MonoBehaviour
     {
         if (!triggered && other.CompareTag("Player"))
         {
-            GameManager.ChangeJugador(true);
+            gameManager.ChangeJugador(true);
             wall.SetActive(true);
 
             triggered = true;
@@ -54,6 +54,7 @@ public class Level3_Trigger2 : MonoBehaviour
         {
             // Ataques hacia la izquierda
             attackDir = false;
+            gameManager.ChangeJugador(!attackDir);
             for (int i = 0; i < cantidadAtaquesPorLado; i++)
             {
                 LanzarAtaqueIzquierdaArriba();
@@ -63,6 +64,7 @@ public class Level3_Trigger2 : MonoBehaviour
 
             // Ataques hacia la derecha
             attackDir = true;
+            gameManager.ChangeJugador(!attackDir);
             for (int i = 0; i < cantidadAtaquesPorLado; i++)
             {
                 LanzarAtaqueDerechaArriba();
