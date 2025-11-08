@@ -28,9 +28,13 @@ public class Lvl1_Stage7 : StageController
     private Coroutine ataqueDownCoroutine;
     private Coroutine ataqueLeftCoroutine;
 
+    public MusicController music;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!TriggerStage(other)) return;
+
+        music.MuteMusic();
 
         string[] lines = {
             "—Me duele ver tu rostro.",
@@ -53,6 +57,8 @@ public class Lvl1_Stage7 : StageController
         enemigo.GetComponent<EnemyStatus>().Active();
         enemigo.GetComponent<EnemyStatus>().TakeDamage(0);
         wall.SetActive(true);
+
+        music.PlayBattleMusic();
 
         ataqueDownCoroutine = StartCoroutine(LanzarAtaquesAbajo());
         ataqueLeftCoroutine = StartCoroutine(LanzarAtaquesIzquierda());

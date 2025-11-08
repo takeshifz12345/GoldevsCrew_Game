@@ -22,6 +22,8 @@ public class PlayerHealth : MonoBehaviour
 
     private Animator animator;
 
+    public MusicController music;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -90,5 +92,7 @@ public class PlayerHealth : MonoBehaviour
             GameOver.SetActive(true);
 
         Time.timeScale = 0f;
+
+        music.MuteMusic();
     }
 }

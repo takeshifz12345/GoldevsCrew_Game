@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     public void Move(float dir)
     {
+        Debug.Log(Time.timeScale);
         direction = (int)dir;
 
         Vector2 currentVel = rb.linearVelocity;

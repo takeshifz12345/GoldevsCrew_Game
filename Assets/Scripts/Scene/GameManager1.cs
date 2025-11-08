@@ -14,11 +14,14 @@ public class GameManager1 : MonoBehaviour
     public GameObject jugador;
     public GameObject canvasGameOver;
     public int level;
+    public MusicController music;
 
     void Start()
     {
         cam1.enabled = true;
         button.onClick.AddListener(Reiniciar);
+
+        Time.timeScale = 1f;
     }
 
     private void Update()
@@ -84,6 +87,8 @@ public class GameManager1 : MonoBehaviour
         canvasGameOver.SetActive(false);
 
         Time.timeScale = 1f;
+
+        music.PlayBackgroundMusic();
     }
 
     public void DestroyBullets()

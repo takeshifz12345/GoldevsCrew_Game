@@ -12,6 +12,8 @@ public class EnemyStatus : MonoBehaviour
     [Header("Estado")]
     private bool active = false;
 
+    public MusicController music;
+
     private void Awake()
     {
         currentHealth = maxHealth;
@@ -50,6 +52,11 @@ public class EnemyStatus : MonoBehaviour
 
     private void Die()
     {
+        if (music != null)
+        {
+            music.MuteMusic();
+        }
+
         Destroy(gameObject);
     }
 

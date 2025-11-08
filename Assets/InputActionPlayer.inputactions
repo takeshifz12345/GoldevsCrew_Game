@@ -68,6 +68,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7b91200b-61f8-406e-bd2c-791cc477f45a",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "df95f6f6-c8b7-4849-902c-9df2de8cea43",
                     "path": "<Keyboard>/q",
                     "interactions": "",
@@ -667,6 +678,34 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Menu",
+            "id": "8b79d13c-0614-4bea-bc08-380d626746b3",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "da7492b1-d076-4d2f-82cd-a6b9306c1e1b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a28101bc-35fc-4ecc-9b76-944be69183e9",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

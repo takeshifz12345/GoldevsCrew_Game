@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,11 +9,13 @@ public class InputReader : MonoBehaviour
     public PlayerController playerController;
     public PlayerShoot playerShoot;
     public PlayerHealth playerHealth;
+    public PauseMenu pauseMenu;
 
     private InputAction moveAction;
     private InputAction jumpAction;
     private InputAction shootAction;
     private InputAction callAction;
+    private InputAction pauseAction;
 
     private bool inputsEnabled;
 
@@ -29,17 +32,20 @@ public class InputReader : MonoBehaviour
     public void ConfigureActions()
     {
         var actionMap = inputActionPlayer.FindActionMap(actionMapName, true);
+        var actionMapMenu = inputActionPlayer.FindActionMap("Menu", true);
 
         moveAction = actionMap.FindAction("Move", true);
         jumpAction = actionMap.FindAction("Jump", true);
         shootAction = actionMap.FindAction("Shoot", true);
         callAction = actionMap.FindAction("Call", true);
+        pauseAction = actionMapMenu.FindAction("Pause", true);
 
         moveAction.performed += OnMove;
         moveAction.canceled += OnMove;
         jumpAction.performed += OnJump;
         shootAction.performed += OnShoot;
         callAction.performed += OnCall;
+        pauseAction.performed += OnPause;
     }
 
     public void EnableInput()
@@ -88,6 +94,15 @@ public class InputReader : MonoBehaviour
             playerHealth.Heal();
     }
 
+    void OnPause(InputAction.CallbackContext ctx)
+    {
+        if (pauseMenu == null)return;
+
+        if (ctx.performed)
+        {
+            pauseMenu.Pause();
+        }
+    }
 
     void Start()
     {
