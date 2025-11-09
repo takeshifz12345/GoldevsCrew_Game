@@ -16,6 +16,8 @@ public class OpenMenu : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.LoadScene(0); // Cargar la escena del menú (índice 0)
+        //SceneManager.LoadScene(0); // Cargar la escena del menú (índice 0)
+
+        LevelLoader.LoadLevel("Main");
     }
 }

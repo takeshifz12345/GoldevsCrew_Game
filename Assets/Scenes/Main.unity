@@ -1488,8 +1488,8 @@ MonoBehaviour:
 
     Angelica Morales Camargo
 
-    Carlos
-    Daniel Carvalho Foronda
+    Carlos Daniel
+    Carvalho Foronda
 
     Carolina Ysabel Lotore Silva'
   m_isRightToLeft: 0
@@ -2302,7 +2302,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1369823047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbf8ce4c615c66a4cb312ab701fdf6ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 8375b66ccfb5f6a4295109dcaa214733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nombreEscena: Level1
