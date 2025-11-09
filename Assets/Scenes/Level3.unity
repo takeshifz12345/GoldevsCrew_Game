@@ -1174,6 +1174,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: b7faf783595b587448a06460439b7f45, type: 2}
     - target: {fileID: 4416719203842283108, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 949657732}
+    - target: {fileID: 4416719203842283108, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
       propertyPath: GameOver
       value: 
       objectReference: {fileID: 843880482}
@@ -1688,6 +1692,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7510612304586007018, guid: 9cfca5c9a931a124b9d6815a781995a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7510612304586007018, guid: 9cfca5c9a931a124b9d6815a781995a6, type: 3}
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
@@ -1720,6 +1728,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4416719203842283108, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 949657732}
     - target: {fileID: 4416719203842283108, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
       propertyPath: GameOver
       value: 
@@ -1912,6 +1924,15 @@ MonoBehaviour:
   inputReader: {fileID: 1386752978}
   dialogController: {fileID: 687249559}
   final: {fileID: 1573559922}
+  trigger: {fileID: 841545469}
+  SpawnY: 0
+  SpawnX1: 0
+  SpawnX2: 0
+  canvasGameOver: {fileID: 843880482}
+  music: {fileID: 949657732}
+  walls:
+  - {fileID: 638468918}
+  - {fileID: 376752859}
 --- !u!4 &949657729
 Transform:
   m_ObjectHideFlags: 0

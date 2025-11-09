@@ -138,7 +138,7 @@ public class Level3_Trigger2 : MonoBehaviour
         }
     }
 
-    private void Desactivar()
+    public void Desactivar()
     {
         if (cicloAtaquesCoroutine != null)
         {

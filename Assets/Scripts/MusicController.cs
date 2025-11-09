@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour
 {
-    public AudioSource backgroundMusic;
-    public AudioSource battleMusic;
+    public AudioSource? backgroundMusic;
+    public AudioSource? battleMusic;
     public string state;
 
     public void PlayBackgroundMusic()

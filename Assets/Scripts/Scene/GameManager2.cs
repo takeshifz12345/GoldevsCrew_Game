@@ -17,6 +17,18 @@ public class GameManager2 : MonoBehaviour
 
     public Canvas final;
 
+    public Level3_Trigger2 trigger;
+
+    public float SpawnY;
+    public float SpawnX1;
+    public float SpawnX2;
+
+    public GameObject canvasGameOver;
+
+    public MusicController music;
+
+    public GameObject[] walls;
+
     public void Start()
     {
         introCam.enabled = true;
@@ -28,9 +40,53 @@ public class GameManager2 : MonoBehaviour
 
     }
 
-    public void ReiniciarNivel()
+    public void Reiniciar()
     {
+        trigger.triggered = false;
 
+        Player1.transform.position = new Vector3(SpawnX1, SpawnY, 0);
+        Player2.transform.position = new Vector3(SpawnX2, SpawnY, 0);
+
+        ChangeJugador(true);
+
+        trigger.enemigo.GetComponent<KingStatus>().ResetHealth();
+        trigger.Desactivar();
+
+        Player1.GetComponent<PlayerHealth>().currentHealth = Player1.GetComponent<PlayerHealth>().maxHealth;
+        Player1.GetComponent<PlayerHealth>().healCooldownTimer = 0;
+
+        Player2.GetComponent<PlayerHealth>().currentHealth = Player2.GetComponent<PlayerHealth>().maxHealth;
+        Player2.GetComponent<PlayerHealth>().healCooldownTimer = 0;
+
+        DestroyBullets();
+
+        canvasGameOver.SetActive(false);
+
+        Time.timeScale = 1f;
+
+        music.MuteMusic();
+
+        for (int i = 0; i < walls.Length; i++)
+        {
+            walls[i].SetActive(false);
+        }
+    }
+
+    public void DestroyBullets()
+    {
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+
+        foreach (GameObject bullet in bullets)
+        {
+            Destroy(bullet);
+        }
+
+        GameObject[] enemyAttacks = GameObject.FindGameObjectsWithTag("EnemyAttack");
+
+        foreach (GameObject enemyAttack in enemyAttacks)
+        {
+            Destroy(enemyAttack);
+        }
     }
 
     public void ChangeJugador(bool player)
@@ -83,11 +139,6 @@ public class GameManager2 : MonoBehaviour
         dialogController?.Disable();
         inputReader?.EnableInput();
         onComplete?.Invoke();
-    }
-
-    private void Reiniciar()
-    {
-
     }
 
     public void Empezar()

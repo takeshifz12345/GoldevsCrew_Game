@@ -49,7 +49,7 @@ public class KingStatus : MonoBehaviour
     public void ResetHealth()
     {
         currentHealth = maxHealth;
-        UpdateUI();
+        uIEnemyLife.UpdateLifeUI(0);
     }
 
     private void Die()

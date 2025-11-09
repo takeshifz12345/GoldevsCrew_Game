@@ -17,16 +17,16 @@ public class InputReader : MonoBehaviour
     private InputAction callAction;
     private InputAction pauseAction;
 
-    private bool inputsEnabled;
+    private bool inputsEnabled = false;
 
     public void Initialize(PlayerController pc, PlayerShoot ps, PlayerHealth ph, InputActionAsset inputAsset, string mapName)
     {
-        playerController = pc;
-        playerShoot = ps;
-        playerHealth = ph;
-        inputActionPlayer = inputAsset;
-        actionMapName = mapName;
-        inputsEnabled = false;
+        //playerController = pc;
+        //playerShoot = ps;
+        //playerHealth = ph;
+        //inputActionPlayer = inputAsset;
+        //actionMapName = mapName;
+        //inputsEnabled = false;
     }
 
     public void ConfigureActions()
