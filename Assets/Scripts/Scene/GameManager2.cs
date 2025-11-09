@@ -17,7 +17,8 @@ public class GameManager2 : MonoBehaviour
 
     public Canvas final;
 
-    public Level3_Trigger2 trigger;
+    public Level3_Trigger2 trigger2;
+    public Level3_Trigger1 trigger1;
 
     public float SpawnY;
     public float SpawnX1;
@@ -42,15 +43,16 @@ public class GameManager2 : MonoBehaviour
 
     public void Reiniciar()
     {
-        trigger.triggered = false;
+        trigger2.triggered = false;
+        trigger1.triggered = false;
 
         Player1.transform.position = new Vector3(SpawnX1, SpawnY, 0);
         Player2.transform.position = new Vector3(SpawnX2, SpawnY, 0);
 
         ChangeJugador(true);
 
-        trigger.enemigo.GetComponent<KingStatus>().ResetHealth();
-        trigger.Desactivar();
+        trigger2.enemigo.GetComponent<KingStatus>().ResetHealth();
+        trigger2.Desactivar();
 
         Player1.GetComponent<PlayerHealth>().currentHealth = Player1.GetComponent<PlayerHealth>().maxHealth;
         Player1.GetComponent<PlayerHealth>().healCooldownTimer = 0;

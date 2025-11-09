@@ -1207,11 +1207,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8572824402930502657, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.4
+      value: 64.5
       objectReference: {fileID: 0}
     - target: {fileID: 8572824402930502657, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8572824402930502657, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1758,11 +1758,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8572824402930502657, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.37875
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 8572824402930502657, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5958748
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8572824402930502657, guid: 02aaece3b8a51574cb3b45aad5e68e44, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1924,10 +1924,11 @@ MonoBehaviour:
   inputReader: {fileID: 1386752978}
   dialogController: {fileID: 687249559}
   final: {fileID: 1573559922}
-  trigger: {fileID: 841545469}
-  SpawnY: 0
-  SpawnX1: 0
-  SpawnX2: 0
+  trigger2: {fileID: 0}
+  trigger1: {fileID: 0}
+  SpawnY: -0.5
+  SpawnX1: -4.5
+  SpawnX2: 64.5
   canvasGameOver: {fileID: 843880482}
   music: {fileID: 949657732}
   walls:
