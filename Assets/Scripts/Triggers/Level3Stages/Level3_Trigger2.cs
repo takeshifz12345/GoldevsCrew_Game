@@ -40,8 +40,8 @@ public class Level3_Trigger2 : MonoBehaviour
 
             triggered = true;
 
-            enemigo.GetComponent<EnemyStatus>().Active();
-            enemigo.GetComponent<EnemyStatus>().TakeDamage(0);
+            enemigo.GetComponent<KingStatus>().Active();
+            enemigo.GetComponent<KingStatus>().TakeDamage(0);
 
 
             //music battle

@@ -15,6 +15,8 @@ public class GameManager2 : MonoBehaviour
 
     public DialogController dialogController;
 
+    public Canvas final;
+
     public void Start()
     {
         introCam.enabled = true;
@@ -46,14 +48,14 @@ public class GameManager2 : MonoBehaviour
         string[] dialog = new string[]
         {
                 "",
-                "Había una vez dos niñas que eran inseparables.",
-                "Les encantaba dibujar en las paredes, hablar por teléfonos de latas y mirar las estrellas desde la muralla.",
-                "Pero una noche… algo ocurrió.",
-                "Escuché los gritos de mis subordinados; cada uno traía en brazos a una de las niñas, inconsciente.",
-                "Habían caído de la muralla, y sus rostros…",
-                "…",
-                "Oh…",
-                "Están aquí.",
+                "—Había una vez dos niñas que eran inseparables.",
+                "—Les encantaba dibujar en las paredes, hablar por teléfonos de latas y mirar las estrellas desde la muralla.",
+                "—Pero una noche… algo ocurrió.",
+                "—Escuché los gritos de mis subordinados; cada uno traía en brazos a una de las niñas, inconsciente.",
+                "—Habían caído de la muralla, y sus rostros…",
+                "—…",
+                "—Oh…",
+                "—Están aquí.",
                 ""
         };
 
@@ -91,5 +93,33 @@ public class GameManager2 : MonoBehaviour
     public void Empezar()
     {
         ChangeJugador(true);
+    }
+
+    public void Final()
+    {
+        Player2.SetActive(false);
+        Player1.SetActive(false);
+
+        final.enabled = true;
+
+        string[] dialog = new string[]
+        {
+                "",
+                "—...",
+                "—Saben...",
+                "—Las estrellas se ven bonitas...",
+                "—Lo... lo siento",
+                "—Lo siento por desconectarlas",
+                ""
+        };
+
+        float[] tiempos = new float[] { 0.5f, 1.5f, 3f, 7f, 5f, 7f, 0.5f };
+
+        StartDialog(dialog, tiempos, () => Creditos());
+    }
+
+    public void Creditos()
+    {
+
     }
 }
