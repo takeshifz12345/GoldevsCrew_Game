@@ -164,7 +164,7 @@ public class GameManager2 : MonoBehaviour
                 ""
         };
 
-        float[] tiempos = new float[] { 0.5f, 1.5f, 3f, 7f, 5f, 7f, 0.5f };
+        float[] tiempos = new float[] { 0.5f, 1.5f, 3f, 5f, 3f, 5f, 0.5f };
 
         StartDialog(dialog, tiempos, () => Creditos());
     }
