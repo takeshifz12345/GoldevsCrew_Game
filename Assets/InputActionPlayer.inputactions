@@ -79,6 +79,17 @@
                 },
                 {
                     "name": "",
+                    "id": "2da03af5-9771-4058-b21c-68265259fa7f",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "df95f6f6-c8b7-4849-902c-9df2de8cea43",
                     "path": "<Keyboard>/q",
                     "interactions": "",
@@ -90,8 +101,30 @@
                 },
                 {
                     "name": "",
+                    "id": "8050ca0f-89e7-4f92-b8e9-51f0de6a1308",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Call",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d89e8b23-6fa0-460c-bd2f-ea7821dfb353",
                     "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c80add79-93b4-4f0f-b6ed-bbebb70fd3ea",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -166,37 +199,15 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "f526f339-86b4-41a3-ba93-9660866efd6a",
-                    "path": "1DAxis",
+                    "name": "",
+                    "id": "491170f3-ccc5-4e0f-841e-db11b4a67535",
+                    "path": "<Joystick>/stick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Move",
-                    "isComposite": true,
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "1a008502-d3e0-48fb-9250-9a2df02803cb",
-                    "path": "<Joystick>/stick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "d8b85669-9c41-48f7-9553-d1e0f4bc926d",
-                    "path": "<Joystick>/stick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         },

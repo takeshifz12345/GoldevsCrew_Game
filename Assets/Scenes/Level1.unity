@@ -228,7 +228,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 3, y: -316}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 252, y: 252}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &25448773
 MonoBehaviour:
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: <Keyboard>/e
+  m_ControlPath: <Gamepad>/buttonEast
 --- !u!114 &25448774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.46666667}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -299,7 +299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &31174797
 RectTransform:
   m_ObjectHideFlags: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: <Keyboard>/leftArrow
+  m_ControlPath: <Joystick>/stick/left
 --- !u!114 &31174799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,8 +983,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 249, y: -319}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 332, y: -316}
+  m_SizeDelta: {x: 252, y: 252}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402526575
 MonoBehaviour:
@@ -998,7 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: <Keyboard>/q
+  m_ControlPath: <Gamepad>/buttonWest
 --- !u!114 &402526576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.46666667}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1054,7 +1054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &403915414
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1072,8 +1072,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -442, y: -79}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -686, y: -150}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &403915415
 MonoBehaviour:
@@ -1088,7 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.46666667}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1736,7 +1736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1125212016308568029, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7417011643513975709, guid: 5a2ce2975035d08438963c852c248be1, type: 3}
       propertyPath: m_SortingOrder
@@ -1873,7 +1873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &578221001
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1905,7 +1905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: <Keyboard>/rightArrow
+  m_ControlPath: <Joystick>/stick/right
 --- !u!114 &578221003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2860,6 +2860,7 @@ GameObject:
   - component: {fileID: 986112837}
   - component: {fileID: 986112836}
   - component: {fileID: 986112835}
+  - component: {fileID: 986112839}
   m_Layer: 5
   m_Name: MovilControls
   m_TagString: Untagged
@@ -2899,7 +2900,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1600, y: 900}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2928,7 +2929,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &986112838
 RectTransform:
@@ -2955,6 +2956,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &986112839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986112834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6474c479e0bf998458c903a9fc5c39bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &986644746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2561076305989252707, guid: 813c3c31e3dae4d4d8ac36342f8973ba, type: 3}
@@ -3468,7 +3481,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 669, y: -102}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1122355438
 MonoBehaviour:
@@ -3482,7 +3495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: <Keyboard>/space
+  m_ControlPath: <Gamepad>/buttonNorth
 --- !u!114 &1122355439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3496,7 +3509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.46666667}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4167,6 +4180,7 @@ GameObject:
   - component: {fileID: 1441546230}
   - component: {fileID: 1441546229}
   - component: {fileID: 1441546228}
+  - component: {fileID: 1441546231}
   m_Layer: 5
   m_Name: MoveControl2
   m_TagString: Untagged
@@ -4205,7 +4219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementRange: 50
+  m_MovementRange: 100
   m_DynamicOriginRange: 100
   m_ControlPath: <Joystick>/stick
   m_Behaviour: 0
@@ -4241,7 +4255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.48235294}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4266,6 +4280,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441546226}
   m_CullTransparentMesh: 1
+--- !u!114 &1441546231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441546226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0e41cc34350884d9ec54db06ff763f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1458487674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5599297089450727281, guid: b8764428a9d2a834fb0476391fe6f639, type: 3}
@@ -7433,6 +7459,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2200091164177008551, guid: f5e8d55e8ab295445ae53262ca95d65c, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200091164177008551, guid: f5e8d55e8ab295445ae53262ca95d65c, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200091164177008551, guid: f5e8d55e8ab295445ae53262ca95d65c, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200091164177008551, guid: f5e8d55e8ab295445ae53262ca95d65c, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3706911035524147661, guid: f5e8d55e8ab295445ae53262ca95d65c, type: 3}
       propertyPath: m_Name
       value: Cameras
