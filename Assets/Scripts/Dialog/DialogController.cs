@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class DialogController : MonoBehaviour
 {
@@ -13,57 +14,180 @@ public class DialogController : MonoBehaviour
 
     public GameObject mobile;
 
+    // Internos del texto y tipeo
+    private bool isTyping;
+    private string fullText;
+    private Coroutine typingCoroutine;
+
+    // Internos del flujo de diálogo
+    private string[] lines;
+    private int currentLine = 0;
+    private Coroutine lineFlowCoroutine;
+    private bool waitingNextLine;
+
     private void Awake()
     {
-        // Busca automáticamente solo si no se asignó en el inspector
         dialogText ??= GameObject.Find("DialogText")?.GetComponent<TextMeshProUGUI>();
         dialogImage ??= GameObject.Find("DialogImage")?.GetComponent<Image>();
         dialogProfile ??= GameObject.Find("DialogProfile")?.GetComponent<Image>();
 
-        // Desactiva ambos al inicio
-        SetActive(false, 0);
+        if (dialogText == null || dialogImage == null || dialogProfile == null)
+            Debug.LogError("DialogController: Falta asignar referencias de UI.");
+
+        ToggleUI(false);
     }
 
-    /// <summary>
-    /// Activa el diálogo
-    /// </summary>
-    public void Enable(int sprite) => SetActive(true, sprite);
+    // ===================== MÉTODOS PÚBLICOS (NO TOCAR) =====================
 
-    /// <summary>
-    /// Desactiva el diálogo
-    /// </summary>
-    public void Disable() => SetActive(false, 0);
+    public void Enable(int spriteIndex)
+    {
+        ToggleUI(true);
+        ChangeProfile(spriteIndex);
+    }
 
-    /// <summary>
-    /// Cambia el texto del diálogo
-    /// </summary>
+    public void Disable()
+    {
+        if (lineFlowCoroutine != null)
+            StopCoroutine(lineFlowCoroutine);
+
+        if (typingCoroutine != null)
+            StopCoroutine(typingCoroutine);
+
+        ToggleUI(false);
+    }
+
     public void ChangeText(string newText)
     {
-        if (dialogText != null)
-            dialogText.text = newText;
-        else
+        if (dialogText == null)
+        {
             Debug.LogWarning("DialogController: No hay TextMeshPro asignado.");
+            return;
+        }
+
+        fullText = newText;
+
+        // Lanzamos typeo instantáneo (speed = 0)
+        if (typingCoroutine != null)
+            StopCoroutine(typingCoroutine);
+
+        typingCoroutine = StartCoroutine(TypeText(newText, 0f));
     }
 
-    /// <summary>
-    /// Activa o desactiva ambos elementos
-    /// </summary>
-    private void SetActive(bool value, int spriteValue)
+    public void ChangeProfile(int spriteIndex)
+    {
+        if (dialogProfile != null)
+        {
+            if (spriteIndex >= 0 && spriteIndex < sprite.Length)
+                dialogProfile.sprite = sprite[spriteIndex];
+            else
+                Debug.LogWarning("DialogController: índice de sprite fuera de rango.");
+        }
+        else
+        {
+            Debug.LogWarning("DialogController: No hay Image asignado para el perfil.");
+        }
+    }
+
+    // ===================== NUEVO: INICIAR DIÁLOGO DE VARIAS LÍNEAS =====================
+
+    public void StartDialog(string[] dialogLines)
+    {
+        lines = dialogLines;
+        currentLine = 0;
+
+        if (lineFlowCoroutine != null)
+            StopCoroutine(lineFlowCoroutine);
+
+        lineFlowCoroutine = StartCoroutine(LineFlow());
+    }
+
+    // ===================== CORRUTINA DEL FLUJO =====================
+
+    private IEnumerator LineFlow()
+    {
+        while (currentLine < lines.Length)
+        {
+            // Mostrar esta línea
+            ChangeText(lines[currentLine]);
+
+            // Espera entre líneas antes de avanzar
+            waitingNextLine = true;
+            float delay = 5f;
+
+            float t = 0f;
+            while (t < delay && waitingNextLine)
+            {
+                t += Time.deltaTime;
+                yield return null;
+            }
+
+            waitingNextLine = false;
+            currentLine++;
+        }
+
+        // Se acabaron las líneas ? cerrar
+        Disable();
+    }
+
+    // ===================== TYPEO =====================
+
+    private IEnumerator TypeText(string txt, float speed)
+    {
+        isTyping = true;
+        dialogText.text = "";
+
+        foreach (char c in txt)
+        {
+            dialogText.text += c;
+
+            if (speed > 0f)
+                yield return new WaitForSeconds(speed);
+            else
+                yield return null;
+        }
+
+        isTyping = false;
+    }
+
+    // ===================== BOTÓN SKIP =====================
+
+    public void Skip()
+    {
+        // 1. Si está tipeando ? completar texto
+        if (isTyping)
+        {
+            if (typingCoroutine != null)
+                StopCoroutine(typingCoroutine);
+
+            dialogText.text = fullText;
+            isTyping = false;
+            return;
+        }
+
+        // 2. Si está en la espera ? avanzar YA
+        if (waitingNextLine)
+        {
+            waitingNextLine = false;
+            return;
+        }
+
+        // 3. Si ya no hay más líneas ? cerrar
+        if (currentLine >= lines.Length)
+        {
+            Disable();
+            return;
+        }
+    }
+
+    // ===================== UTILIDAD =====================
+
+    private void ToggleUI(bool value)
     {
         if (dialogText != null) dialogText.gameObject.SetActive(value);
         if (dialogImage != null) dialogImage.gameObject.SetActive(value);
         if (dialogProfile != null) dialogProfile.gameObject.SetActive(value);
 
-        dialogProfile.sprite = sprite[spriteValue];
-
-        mobile.GetComponent<CanvasVisibility>().SetEnable(!value);
-    }
-
-    public void ChangeProfile(int spriteValue)
-    {
-        if (dialogProfile != null)
-            dialogProfile.sprite = sprite[spriteValue];
-        else
-            Debug.LogWarning("DialogController: No hay Image asignado para el perfil.");
+        if (mobile != null)
+            mobile.GetComponent<CanvasVisibility>().SetEnable(!value);
     }
 }

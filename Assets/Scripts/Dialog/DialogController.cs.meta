@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: f6755aa69166f2c4b8e5626b779e80e8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - dialogText: {instanceID: 0}
+  - dialogImage: {instanceID: 0}
+  - dialogProfile: {instanceID: 0}
+  - mobile: {fileID: 6531716364360037807, guid: 439a091e06267ae44affc589c72a8024, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

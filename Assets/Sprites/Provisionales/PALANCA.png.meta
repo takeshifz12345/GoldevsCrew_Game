@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9e91296a1c8aa684d98e3de0e6d32ca3
+guid: a73543719d8f78c43811a4a9c10e7bdd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4070868121972200369
-    second: CIRCULO 1_0
+      213: -1129202149962882427
+    second: PALANCA_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CIRCULO 1_0
+      name: PALANCA_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4ca26ee20f5187c0800000000000000
-      internalID: -4070868121972200369
+      spriteID: 582eadb90a44450f0800000000000000
+      internalID: -1129202149962882427
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CIRCULO 1_0: -4070868121972200369
+      PALANCA_0: -1129202149962882427
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

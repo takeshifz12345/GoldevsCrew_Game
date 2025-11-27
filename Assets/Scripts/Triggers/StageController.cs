@@ -22,9 +22,10 @@ public class StageController : MonoBehaviour
 
     public bool triggered = false;
 
+    private System.Action pendingOnComplete;
+
     protected virtual void Awake()
     {
-        // Si no se asignan, se buscan automáticamente en la escena
         if (inputReader == null)
             inputReader = FindAnyObjectByType<InputReader>();
 
@@ -38,31 +39,52 @@ public class StageController : MonoBehaviour
         {
             triggered = true;
             inputReader?.DisableInput();
-
             return true;
         }
         return false;
     }
 
+    // =============================================================
+    // NUEVA IMPLEMENTACIÓN usando DialogController (sin romper API)
+    // =============================================================
+
     protected void StartDialog(string[] lines, float[] times, System.Action onComplete = null)
     {
-        StartCoroutine(DialogRoutine(lines, times, onComplete));
+        // Guardamos callback sin ejecutarlo aún.
+        pendingOnComplete = onComplete;
+
+        // Activar UI + sprite.
+        dialogController.Enable(spriteDialog);
+
+        // Iniciar diálogo multilínea.
+        dialogController.StartDialog(lines);
+
+        // Necesitamos esperar a que DialogController termine.
+        StartCoroutine(WaitDialogEnd());
     }
 
-    public virtual IEnumerator DialogRoutine(string[] lines, float[] times, System.Action onComplete)
+    // Espera hasta que DialogController cierre su UI
+    private IEnumerator WaitDialogEnd()
     {
-        dialogController?.Enable(spriteDialog);
-
-        for (int i = 0; i < lines.Length; i++)
+        // Mientras el diálogo esté activo, seguimos esperando.
+        while (dialogController.gameObject.activeInHierarchy &&
+               dialogController.enabled &&
+               dialogController.isActiveAndEnabled &&
+               dialogController.gameObject.activeSelf &&
+               dialogController.transform.GetChild(0).gameObject.activeSelf)
         {
-            dialogController?.ChangeText(lines[i]);
-            yield return new WaitForSeconds(times[i]);
+            yield return null;
         }
 
-        dialogController?.Disable();
+        // Reactivar input.
         inputReader?.EnableInput();
-        onComplete?.Invoke();
+
+        // Ejecutar callback.
+        pendingOnComplete?.Invoke();
+        pendingOnComplete = null;
     }
+
+    // =============================================================
 
     protected void LaunchAttacks(AttackData[] attacks)
     {

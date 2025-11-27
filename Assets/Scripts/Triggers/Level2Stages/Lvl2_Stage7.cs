@@ -44,24 +44,13 @@ public class Lvl2_Stage7 : StageController
 
         float[] times = { 1.5f, 1.5f, 3f };
 
+        // StageController ahora maneja diálogos multilínea con DialogController.
         StartDialog(lines, times, FinalizarDialogo);
     }
 
-    public override IEnumerator DialogRoutine(string[] lines, float[] times, System.Action onComplete)
-    {
-        dialogController?.Enable(spriteDialog);
-
-        for (int i = 0; i < lines.Length; i++)
-        {
-            dialogController.ChangeProfile(i);
-            dialogController?.ChangeText(lines[i]);
-            yield return new WaitForSeconds(times[i]);
-        }
-
-        dialogController?.Disable();
-        inputReader?.EnableInput();
-        onComplete?.Invoke();
-    }
+    // ----------------------------------------
+    // YA NO SE NECESITA DialogRoutine()
+    // ----------------------------------------
 
     private void FinalizarDialogo()
     {
@@ -133,7 +122,6 @@ public class Lvl2_Stage7 : StageController
         if (enemigo == null)
         {
             desactivar();
-
             Destroy(this);
         }
     }
@@ -142,7 +130,7 @@ public class Lvl2_Stage7 : StageController
     {
         if (ataqueDownCoroutine != null) StopCoroutine(ataqueDownCoroutine);
         if (ataqueLeftCoroutine != null) StopCoroutine(ataqueLeftCoroutine);
-            
+
         ojo1.SetOpen(false);
         ojo2.SetOpen(false);
         ojo3.SetOpen(false);
