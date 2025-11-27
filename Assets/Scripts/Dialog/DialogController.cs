@@ -11,6 +11,8 @@ public class DialogController : MonoBehaviour
     [SerializeField] private Image dialogImage;
     [SerializeField] private Image dialogProfile;
 
+    public GameObject mobile;
+
     private void Awake()
     {
         // Busca automáticamente solo si no se asignó en el inspector
@@ -53,6 +55,8 @@ public class DialogController : MonoBehaviour
         if (dialogProfile != null) dialogProfile.gameObject.SetActive(value);
 
         dialogProfile.sprite = sprite[spriteValue];
+
+        mobile.GetComponent<CanvasVisibility>().SetEnable(!value);
     }
 
     public void ChangeProfile(int spriteValue)
